@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp108tkmne78u"]
+
+[ext_resource type="Texture2D" uid="uid://mxxw7bwh2ib5" path="res://Sprites/Enemies/enemies x1.png" id="1_vtmbn"]
+[ext_resource type="Script" path="res://Scripts/piano_teacher.gd" id="1_wxf3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52riy"]
+size = Vector2(12, 14)
+
+[node name="PianoTeacher" type="CharacterBody2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_wxf3s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 4)
+texture = ExtResource("1_vtmbn")
+hframes = 10
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_52riy")

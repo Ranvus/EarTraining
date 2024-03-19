@@ -1,0 +1,202 @@
+[gd_scene load_steps=41 format=3 uid="uid://dhdkkpsggrkju"]
+
+[ext_resource type="Texture2D" uid="uid://mxxw7bwh2ib5" path="res://Sprites/Enemies/enemies x1.png" id="1_43vo7"]
+[ext_resource type="Script" path="res://Scripts/octave_teacher.gd" id="1_ylv6x"]
+[ext_resource type="AudioStream" uid="uid://dql7nm2jxn4nr" path="res://Audio/Notes/C3_piano.wav" id="2_dk7bq"]
+[ext_resource type="PackedScene" uid="uid://bu25o5py640l8" path="res://Scenes/note.tscn" id="2_m3qg2"]
+[ext_resource type="AudioStream" uid="uid://2yqddtt03sko" path="res://Audio/Notes/Db3_piano.wav" id="3_0ubpq"]
+[ext_resource type="AudioStream" uid="uid://c3t3hpqcxnoe3" path="res://Audio/Notes/D3_piano.wav" id="4_i3bb3"]
+[ext_resource type="AudioStream" uid="uid://crh4qf27g1llp" path="res://Audio/Notes/Eb3_piano.wav" id="5_ajvym"]
+[ext_resource type="AudioStream" uid="uid://d1wcoilokwkpt" path="res://Audio/Notes/E3_piano.wav" id="6_bln6p"]
+[ext_resource type="AudioStream" uid="uid://b7mhu5r6dgsqe" path="res://Audio/Notes/F3_piano.wav" id="7_4sqof"]
+[ext_resource type="AudioStream" uid="uid://vx4y5q2k3pb1" path="res://Audio/Notes/Gb3_piano.wav" id="8_incjr"]
+[ext_resource type="AudioStream" uid="uid://b8sd2fgqb3vu3" path="res://Audio/Notes/G3_piano.wav" id="9_4v1ob"]
+[ext_resource type="AudioStream" uid="uid://c5icgfigfa4qa" path="res://Audio/Notes/Ab3_piano.wav" id="10_n2qia"]
+[ext_resource type="AudioStream" uid="uid://c22a8m0m8k5x0" path="res://Audio/Notes/A3_piano.wav" id="11_e44oq"]
+[ext_resource type="AudioStream" uid="uid://dm5asr5swf7q5" path="res://Audio/Notes/Bb3_piano.wav" id="12_chk1i"]
+[ext_resource type="AudioStream" uid="uid://c1n46lpauq34f" path="res://Audio/Notes/B3_piano.wav" id="13_nt4jm"]
+[ext_resource type="AudioStream" uid="uid://bg73wt0cyg2xo" path="res://Audio/Notes/C4_piano.wav" id="14_31rl8"]
+[ext_resource type="AudioStream" uid="uid://t75xolk7gpvj" path="res://Audio/Notes/Db4_piano.wav" id="15_pqah5"]
+[ext_resource type="AudioStream" uid="uid://dt5ypjjuvlcjk" path="res://Audio/Notes/D4_piano.wav" id="16_k2rfq"]
+[ext_resource type="AudioStream" uid="uid://qhyfnwiyniyb" path="res://Audio/Notes/Eb4_piano.wav" id="17_ebps6"]
+[ext_resource type="AudioStream" uid="uid://dcsb60x28qfbe" path="res://Audio/Notes/E4_piano.wav" id="18_kcuis"]
+[ext_resource type="AudioStream" uid="uid://grinj2ngekgd" path="res://Audio/Notes/F4_piano.wav" id="19_ksqob"]
+[ext_resource type="AudioStream" uid="uid://dmh6ob5lmn7qk" path="res://Audio/Notes/Gb4_piano.wav" id="20_8efe5"]
+[ext_resource type="AudioStream" uid="uid://bte2mc7eo0g27" path="res://Audio/Notes/G4_piano.wav" id="21_jerjn"]
+[ext_resource type="AudioStream" uid="uid://fg8a414yaf1" path="res://Audio/Notes/Ab4_piano.wav" id="22_0wdaq"]
+[ext_resource type="AudioStream" uid="uid://cyauyrko3uxst" path="res://Audio/Notes/A4_piano.wav" id="23_3ui8x"]
+[ext_resource type="AudioStream" uid="uid://byody8audgfrh" path="res://Audio/Notes/Bb4_piano.wav" id="24_n17qw"]
+[ext_resource type="AudioStream" uid="uid://cs8x0ee7e7i3g" path="res://Audio/Notes/B4_piano.wav" id="25_lv6nu"]
+[ext_resource type="AudioStream" uid="uid://cglgle0vo1bc8" path="res://Audio/Notes/C5_piano.wav" id="26_jodst"]
+[ext_resource type="AudioStream" uid="uid://drnqqiybj37ie" path="res://Audio/Notes/Db5_piano.wav" id="27_7c2mb"]
+[ext_resource type="AudioStream" uid="uid://cd84em1ds5vfv" path="res://Audio/Notes/D5_piano.wav" id="28_mreaw"]
+[ext_resource type="AudioStream" uid="uid://d0rabrui0e0sq" path="res://Audio/Notes/Eb5_piano.wav" id="29_w3xy5"]
+[ext_resource type="AudioStream" uid="uid://cu4ysyyf3148l" path="res://Audio/Notes/E5_piano.wav" id="30_meall"]
+[ext_resource type="AudioStream" uid="uid://bv3pqoeomkmtq" path="res://Audio/Notes/F5_piano.wav" id="31_38tc5"]
+[ext_resource type="AudioStream" uid="uid://uqrgkkpiusd8" path="res://Audio/Notes/Gb5_piano.wav" id="32_u3pbm"]
+[ext_resource type="AudioStream" uid="uid://cd2bierlc8r58" path="res://Audio/Notes/G5_piano.wav" id="33_nvsht"]
+[ext_resource type="AudioStream" uid="uid://d1vhp52b070r4" path="res://Audio/Notes/Ab5_piano.wav" id="34_16bkt"]
+[ext_resource type="AudioStream" uid="uid://b7d0uq555e360" path="res://Audio/Notes/A5_piano.wav" id="35_m12ve"]
+[ext_resource type="AudioStream" uid="uid://blco5ggv356ib" path="res://Audio/Notes/Bb5_piano.wav" id="36_m8gmo"]
+[ext_resource type="AudioStream" uid="uid://bacp6n8bj88bv" path="res://Audio/Notes/B5_piano.wav" id="37_jcodo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3btdo"]
+
+[node name="OctaveTeacher" type="CharacterBody2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_ylv6x")
+note = ExtResource("2_m3qg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_43vo7")
+hframes = 10
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3btdo")
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="C3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("2_dk7bq")
+
+[node name="Db3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("3_0ubpq")
+
+[node name="D3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("4_i3bb3")
+
+[node name="Eb3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("5_ajvym")
+
+[node name="E3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("6_bln6p")
+
+[node name="F3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("7_4sqof")
+
+[node name="Gb3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("8_incjr")
+
+[node name="G3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("9_4v1ob")
+
+[node name="Ab3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("10_n2qia")
+
+[node name="A3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("11_e44oq")
+
+[node name="Bb3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("12_chk1i")
+
+[node name="B3" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("13_nt4jm")
+
+[node name="C4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("14_31rl8")
+
+[node name="Db4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("15_pqah5")
+
+[node name="D4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("16_k2rfq")
+
+[node name="Eb4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("17_ebps6")
+
+[node name="E4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("18_kcuis")
+
+[node name="F4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("19_ksqob")
+
+[node name="Gb4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("20_8efe5")
+
+[node name="G4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("21_jerjn")
+
+[node name="Ab4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("22_0wdaq")
+
+[node name="A4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("23_3ui8x")
+
+[node name="Bb4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("24_n17qw")
+
+[node name="B4" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("25_lv6nu")
+
+[node name="C5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("26_jodst")
+
+[node name="Db5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("27_7c2mb")
+
+[node name="D5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("28_mreaw")
+
+[node name="Eb5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("29_w3xy5")
+
+[node name="E5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("30_meall")
+
+[node name="F5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("31_38tc5")
+
+[node name="Gb5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("32_u3pbm")
+
+[node name="G5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("33_nvsht")
+
+[node name="Ab5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("34_16bkt")
+
+[node name="A5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("35_m12ve")
+
+[node name="Bb5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("36_m8gmo")
+
+[node name="B5" type="AudioStreamPlayer2D" parent="Notes"]
+scale = Vector2(4, 4)
+stream = ExtResource("37_jcodo")

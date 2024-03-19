@@ -1,0 +1,93 @@
+{
+    "editor": "mboy-editor_2.2",
+    "format_version": "2.0",
+    "audio": {
+        "artist": "asda",
+        "title": "drums",
+        "album": "",
+        "subgenre": "",
+        "date": "",
+        "download_link": "asdasd",
+        "comments": "",
+        "genre": "Jazz"
+    },
+    "author": "asdasd",
+    "date": "2024-03-12",
+    "tempo": 100,
+    "start_pos": 0,
+    "tracks": [
+        {
+            "instrument": "drums",
+            "name": "KICK",
+            "color": "ff009fff",
+            "bars": [
+                {
+                    "index": 0,
+                    "quarters_count": 4,
+                    "notes": [
+                        {
+                            "pos": 0,
+                            "len": 100,
+                            "markers": []
+                        },
+                        {
+                            "pos": 700,
+                            "len": 100,
+                            "markers": []
+                        }
+                    ]
+                },
+                {
+                    "index": 1,
+                    "quarters_count": 4,
+                    "notes": [
+                        {
+                            "pos": 0,
+                            "len": 100,
+                            "markers": []
+                        },
+                        {
+                            "pos": 1500,
+                            "len": 100,
+                            "markers": []
+                        }
+                    ]
+                },
+                {
+                    "index": 2,
+                    "quarters_count": 4,
+                    "notes": [
+                        {
+                            "pos": 800,
+                            "len": 100,
+                            "markers": []
+                        }
+                    ]
+                },
+                {
+                    "index": 3,
+                    "quarters_count": 4,
+                    "notes": [
+                        {
+                            "pos": 0,
+                            "len": 100,
+                            "markers": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "markers": [
+        {
+            "id": "accent",
+            "code": "*",
+            "color": "ffffff00"
+        },
+        {
+            "id": "extended",
+            "code": "->",
+            "color": "ffffff00"
+        }
+    ]
+}

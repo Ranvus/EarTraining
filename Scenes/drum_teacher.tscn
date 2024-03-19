@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4bl3bke3sked"]
+
+[ext_resource type="Script" path="res://Scripts/DrumTeacher.gd" id="1_3xorx"]
+[ext_resource type="Texture2D" uid="uid://mxxw7bwh2ib5" path="res://Sprites/Enemies/enemies x1.png" id="2_xglkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dobwx"]
+
+[node name="DrumTeacher" type="CharacterBody2D"]
+position = Vector2(580, 54)
+scale = Vector2(4, 4)
+script = ExtResource("1_3xorx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xglkp")
+hframes = 10
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dobwx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

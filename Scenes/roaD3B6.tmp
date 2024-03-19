@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwtp1ogpi4d2d"]
+
+[ext_resource type="Texture2D" uid="uid://dxhpebjxsky13" path="res://Sprites/Drum Session/Road.png" id="1_nuav5"]
+[ext_resource type="Script" path="res://Scripts/road.gd" id="1_o4f6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5vy4"]
+size = Vector2(8, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f546l"]
+size = Vector2(16.5, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keppx"]
+size = Vector2(24, 12)
+
+[node name="Road" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_o4f6n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nuav5")
+
+[node name="Perfect" type="Area2D" parent="."]
+position = Vector2(-112, 4.47035e-08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perfect"]
+shape = SubResource("RectangleShape2D_m5vy4")
+debug_color = Color(0, 0.65098, 0.0862745, 0.419608)
+
+[node name="Good" type="Area2D" parent="."]
+position = Vector2(-112, 4.47035e-08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Good"]
+shape = SubResource("RectangleShape2D_f546l")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Ok" type="Area2D" parent="."]
+position = Vector2(-112, 4.47035e-08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ok"]
+shape = SubResource("RectangleShape2D_keppx")
+debug_color = Color(0.972549, 0, 0.45098, 0.419608)
+
+[node name="BarsSpawner" type="Node2D" parent="."]
+position = Vector2(136.333, 0)
