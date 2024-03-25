@@ -3,19 +3,16 @@ extends CharacterBody2D
 @onready var player = $AudioStreamPlayer2D
 
 var speed
-var started = false
+var started
 var pre_start_duration
 var start_pos_in_sec
-
-#func _ready():
-	#player.stream = audio
-	#player.play()
 
 func setup(game):
 	player.stream = game.audio
 	speed = game.speed
 	pre_start_duration = game.bar_len
 	start_pos_in_sec = game.start_pos_in_sec
+	started = false
 	
 func start():
 	started = true

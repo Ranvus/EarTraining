@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://swmkghl3e58v"]
+
+[ext_resource type="Script" path="res://Scripts/UI/health_container.gd" id="1_crx3c"]
+
+[node name="HealthContainer" type="HBoxContainer"]
+scale = Vector2(3, 3)
+theme_override_constants/separation = 2
+script = ExtResource("1_crx3c")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds6h5om8bgplq"]
+
+[ext_resource type="Script" path="res://Scripts/Doors/drum_session_door.gd" id="1_l6x8d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agdn1"]
+
+[node name="DrumSessionDoor" type="Area2D"]
+script = ExtResource("1_l6x8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_agdn1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

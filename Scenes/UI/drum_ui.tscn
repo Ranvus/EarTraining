@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwn72018ouwf3"]
+
+[ext_resource type="Script" path="res://Scripts/UI/DrumScore.gd" id="1_pfrme"]
+
+[node name="DrumUI" type="CanvasLayer"]
+
+[node name="DrumScore" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 37.0
+offset_right = 104.0
+offset_bottom = 60.0
+text = "0"
+script = ExtResource("1_pfrme")
+
+[node name="DrumCombo" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 67.0
+offset_right = 104.0
+offset_bottom = 90.0

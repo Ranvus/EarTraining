@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://c31k7rbljqe0g"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/piano_session.gd" id="1_hufnr"]
+[ext_resource type="PackedScene" uid="uid://0g4cxqhyjfww" path="res://Scenes/player.tscn" id="1_yw8kq"]
+[ext_resource type="PackedScene" uid="uid://bl8mthks3p0aw" path="res://Scenes/UI/piano_ui.tscn" id="2_mjwif"]
+[ext_resource type="PackedScene" uid="uid://cltmd060wny4o" path="res://Scenes/Levels/tile_map.tscn" id="2_xj1xe"]
+[ext_resource type="PackedScene" uid="uid://dgtu4rdbwqlx4" path="res://Scenes/UI/game_over.tscn" id="4_xo4xc"]
+[ext_resource type="PackedScene" uid="uid://d1khsoxcb418p" path="res://Scenes/fifth_teacher.tscn" id="6_dfy8j"]
+[ext_resource type="PackedScene" uid="uid://bhxkpn2he55t1" path="res://Scenes/save_system.tscn" id="7_3ujld"]
+
+[node name="PianoSession2" type="Node"]
+script = ExtResource("1_hufnr")
+
+[node name="TileMap" parent="." instance=ExtResource("2_xj1xe")]
+
+[node name="Player" parent="." instance=ExtResource("1_yw8kq")]
+position = Vector2(608, 528)
+
+[node name="FifthTeacher" parent="." instance=ExtResource("6_dfy8j")]
+position = Vector2(567, 71)
+
+[node name="PianoUI" parent="." instance=ExtResource("2_mjwif")]
+
+[node name="GameOver" parent="." instance=ExtResource("4_xo4xc")]
+
+[node name="SaveSystem" parent="." instance=ExtResource("7_3ujld")]

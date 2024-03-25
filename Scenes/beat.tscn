@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgcncg7lxmrjj"]
+[gd_scene load_steps=3 format=3 uid="uid://bgcncg7lxmrjj"]
 
-[ext_resource type="Script" path="res://Scripts/beat.gd" id="1_sg7jx"]
 [ext_resource type="Texture2D" uid="uid://dvmi4tiywhhb8" path="res://Sprites/Drum Session/Beat.png" id="1_ucfey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpbf1"]
@@ -8,7 +7,6 @@ size = Vector2(4, 12)
 
 [node name="Beat" type="Node2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_sg7jx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ucfey")

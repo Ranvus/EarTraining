@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
+signal pianoOctaveScoreChanged
+
 @export var note : PackedScene
 
 #@onready var animation = $AnimatedSprite2D
-@onready var player = get_node("/root/PianoLesson/Player")
-@onready var ui = get_node("/root/PianoLesson/UI")
+@onready var player = get_node("../Player")
 
 var bpm : float = 100.0
 var fire_rate : float
 var can_play = true
 
-var score = 0
+var octave_score = 0
 
 @onready var C3_note = $Notes/C3
 @onready var Db3_note = $Notes/Db3
@@ -55,12 +56,8 @@ var score = 0
 					"C5_note", "Db5_note", "D5_note", "Eb5_note", "E5_note", "F5_note",
 					"Gb5_note", "G5_note", "Ab5_note", "A5_note", "Bb5_note", "B5_note"]
 
-var note1
-var note2
 var note_group
 var rand_note
-var rand_note1
-var rand_note2
 var note_array : Array
 
 var intervals = {12 : "Octave",
@@ -73,10 +70,9 @@ var interval_answer : String
 
 func _ready():
 	fire_rate = (60 / bpm) * 2
-	#set_process(false)
 	
-func _process(delta):
-	#Global.piano_score = score
+func _process(_delta):
+	Global.octave_score = octave_score
 	
 	play_note()
 
@@ -94,10 +90,11 @@ func play_note():
 					rand_note = notes[randi_range(notes.find(note_array[i-1])-8, notes.find(note_array[i-1])-12)]
 			note_array.append(rand_note)
 			var notee = get(rand_note)
-			print(notee)
+			#print(notee)
 			notee.play()
 			shoot_note()
-			await get_tree().create_timer(fire_rate).timeout
+			if i == 0:
+				await get_tree().create_timer(fire_rate).timeout
 		can_play = true
 		calculate_interval(notes.find(note_array[0]), notes.find(note_array[1]))
 		note_array.clear()
@@ -114,15 +111,15 @@ func calculate_interval(note1, note2):
 	interval_answer = intervals[interval]
 	print(interval_answer)
 
+
 func right_answer():
-	if interval_answer == player.answer3:
-		#print("w")
-		#answer = "Blank"
-		score += 1
+	if interval_answer == player.answer:
+		octave_score += 1
+		pianoOctaveScoreChanged.emit()
 		for i in get_tree().get_nodes_in_group("notes"):
 			i.queue_free()
 	else:
-		#answer = "Blank"
 		player.cur_health -= 1
+		player.healthChanged.emit(player.cur_health)
 		for i in get_tree().get_nodes_in_group("notes"):
 			i.queue_free()

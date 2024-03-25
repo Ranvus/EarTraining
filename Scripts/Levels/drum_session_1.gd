@@ -3,10 +3,11 @@ extends Node
 @onready var conductor = $DrumTeacher/AudioStreamPlayer2D
 @onready var drum_teacher = $DrumTeacher
 @export var note : PackedScene
-@onready var player = get_node("/root/DrumLesson/Player")
-@onready var road_node = $Road
-@onready var score_node = $Score
-@onready var combo_node = $Combo
+@onready var road_node = get_node_or_null("Road")
+@onready var score_node = get_node_or_null("DrumUI/Score")
+@onready var combo_node = get_node_or_null("DrumUI/Combo")
+@onready var savesystem_node = get_node_or_null("SaveSystem")
+@onready var sessionend_node = get_node_or_null("SessionEnd")
 
 var audio
 var map
@@ -24,23 +25,22 @@ var speed
 var beat_scale
 var start_pos_in_sec
 
-#var dist_to_target
-#var speed
-
-func _ready():
+func _ready():	
 	audio = load(audio_file)
 	map = load_map()
-	calc_params()
+	calc_params()	
 	
 	drum_teacher.setup(self)
 	road_node.setup(self)
-	#conductor.play_with_beat_offset(0)
-	#dist_to_target = drum_teacher.position - player.position
-	#speed = dist_to_target / 2.0
+	
+	sessionend_node.hide()	
+	savesystem_node.load_data(savesystem_node.SAVE_DIR + savesystem_node.SAVE_FILE_NAME)
 
-func _process(delta):
-	score_node.text = str(Global.drum_score)
-	#combo_node.text = str(Global.combo) + " combo!"
+func _process(_delta):
+	#print(get_tree().get_nodes_in_group("beats").size())
+	if get_tree().get_nodes_in_group("beats").size() == 0:
+		savesystem_node.save_data(savesystem_node.SAVE_DIR + savesystem_node.SAVE_FILE_NAME)
+		sessionend_node.show()
 
 func calc_params():
 	bpm = int(map.tempo)
@@ -50,26 +50,10 @@ func calc_params():
 	#beat_scale = bar_len / 4
 	beat_scale = 0.16
 	start_pos_in_sec = (float(map.start_pos)/400.0) * spb
-	#start_pos_in_sec = 19.2
-	
+	#start_pos_in_sec = 64.8
+
 func load_map():
 	var file = FileAccess.open(map_file, FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
 	return JSON.parse_string(content)
-
-#func _on_audio_stream_player_2d_beat():
-	#if conductor.measure == 1:
-		#shoot_note()
-		#await get_tree().create_timer(conductor.spb).timeout
-		#shoot_note()
-
-
-
-func shoot_note():
-	var new_note = note.instantiate()
-	new_note.speed = abs(speed.y)
-	new_note.position = drum_teacher.position
-	new_note.direction = (player.position - drum_teacher.position).normalized()
-	new_note.add_to_group("notes")
-	get_tree().root.call_deferred("add_child", new_note)

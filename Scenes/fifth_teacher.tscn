@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://d1khsoxcb418p"]
+[gd_scene load_steps=41 format=3 uid="uid://d1khsoxcb418p"]
 
 [ext_resource type="Script" path="res://Scripts/fifth_teacher.gd" id="1_11wcu"]
 [ext_resource type="Texture2D" uid="uid://mxxw7bwh2ib5" path="res://Sprites/Enemies/enemies x1.png" id="1_irju7"]
 [ext_resource type="AudioStream" uid="uid://dql7nm2jxn4nr" path="res://Audio/Notes/C3_piano.wav" id="2_dsodk"]
+[ext_resource type="PackedScene" uid="uid://bu25o5py640l8" path="res://Scenes/note.tscn" id="2_rq7no"]
 [ext_resource type="AudioStream" uid="uid://2yqddtt03sko" path="res://Audio/Notes/Db3_piano.wav" id="3_5ds8m"]
 [ext_resource type="AudioStream" uid="uid://c3t3hpqcxnoe3" path="res://Audio/Notes/D3_piano.wav" id="4_p1ku7"]
 [ext_resource type="AudioStream" uid="uid://crh4qf27g1llp" path="res://Audio/Notes/Eb3_piano.wav" id="5_sjov5"]
@@ -45,6 +46,7 @@ size = Vector2(12, 16)
 [node name="FifthTeacher" type="CharacterBody2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_11wcu")
+note = ExtResource("2_rq7no")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_irju7")

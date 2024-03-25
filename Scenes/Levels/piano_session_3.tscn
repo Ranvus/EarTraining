@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://bika6yhesiq0r"]
+
+[ext_resource type="PackedScene" uid="uid://cltmd060wny4o" path="res://Scenes/Levels/tile_map.tscn" id="1_3u611"]
+[ext_resource type="Script" path="res://Scripts/Levels/piano_session.gd" id="1_mxjh5"]
+[ext_resource type="PackedScene" uid="uid://0g4cxqhyjfww" path="res://Scenes/player.tscn" id="2_felna"]
+[ext_resource type="PackedScene" uid="uid://dhdkkpsggrkju" path="res://Scenes/octave_teacher.tscn" id="3_gkbnh"]
+[ext_resource type="PackedScene" uid="uid://dgtu4rdbwqlx4" path="res://Scenes/UI/game_over.tscn" id="4_ife2r"]
+[ext_resource type="PackedScene" uid="uid://bl8mthks3p0aw" path="res://Scenes/UI/piano_ui.tscn" id="5_0j2bw"]
+[ext_resource type="PackedScene" uid="uid://bhxkpn2he55t1" path="res://Scenes/save_system.tscn" id="7_a120i"]
+
+[node name="PianoSession3" type="Node"]
+script = ExtResource("1_mxjh5")
+
+[node name="TileMap" parent="." instance=ExtResource("1_3u611")]
+
+[node name="Player" parent="." instance=ExtResource("2_felna")]
+position = Vector2(574, 529)
+
+[node name="OctaveTeacher" parent="." instance=ExtResource("3_gkbnh")]
+position = Vector2(583, 46)
+
+[node name="GameOver" parent="." instance=ExtResource("4_ife2r")]
+
+[node name="PianoUI" parent="." instance=ExtResource("5_0j2bw")]
+
+[node name="SaveSystem" parent="." instance=ExtResource("7_a120i")]

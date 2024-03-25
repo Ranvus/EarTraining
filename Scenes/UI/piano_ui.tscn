@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl8mthks3p0aw"]
+
+[ext_resource type="Script" path="res://Scripts/UI/piano_ui.gd" id="1_d6b6l"]
+[ext_resource type="PackedScene" uid="uid://swmkghl3e58v" path="res://Scenes/UI/health_container.tscn" id="2_aggt1"]
+[ext_resource type="Script" path="res://Scripts/UI/PianoScore.gd" id="3_busyh"]
+
+[node name="PianoUI" type="CanvasLayer"]
+script = ExtResource("1_d6b6l")
+
+[node name="HealthContainer" parent="." instance=ExtResource("2_aggt1")]
+offset_left = 87.0
+offset_top = 43.0
+offset_right = 87.0
+offset_bottom = 43.0
+
+[node name="PianoScore" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_top = 51.0
+offset_right = -72.0
+offset_bottom = 93.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("3_busyh")

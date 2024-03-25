@@ -1,9 +1,12 @@
 extends Node2D
 
+signal drumScoreChanged
+
 @onready var bar_tscn := preload("res://Scenes/bar.tscn")
 @onready var player_tscn := preload("res://Scenes/player.tscn")
-@onready var player_node = get_node("/root/DrumLesson/Player")
 @onready var bars_spawner = $BarsSpawner
+
+@onready var drumcombo_node = get_node_or_null("../DrumUI/DrumCombo")
 
 var bars = []
 #длина такта в пикселях
@@ -15,10 +18,6 @@ var speed
 #длина доли в пикселях
 var beat_scale
 
-var is_pressed
-var is_collecting
-var is_colliding
-
 var perfect
 var good
 var ok
@@ -27,13 +26,10 @@ var current_beat = null
 var cur_bar_index
 var tracks_data
 
-var score : int = 0
-var combo : int = 0
-var max_combo : int = 0
+var drum_score : int = 0
+var drum_combo : int = 0
 
-#func _ready():
-	#set_process(false)
-	
+
 func setup(game):
 	speed = Vector2(-game.speed, 0)
 	bar_len = game.bar_len
@@ -44,8 +40,18 @@ func setup(game):
 	add_bars()
 		
 func _process(delta):
-	Global.drum_score = score
-	Global.drum_combo = combo
+	#get_parent().global_drum_score = drum_score
+	if "1" in get_parent().name:
+		Global.drum1_score = drum_score
+	elif "2" in get_parent().name:
+		Global.drum2_score = drum_score
+	elif "3" in get_parent().name:
+		Global.drum3_score = drum_score
+	elif "4" in get_parent().name:
+		Global.drum4_score = drum_score
+	elif "5" in get_parent().name:
+		Global.drum5_score = drum_score
+	Global.drum_combo = drum_combo
 	
 	bars_spawner.translate(speed*delta)
 	
@@ -54,60 +60,21 @@ func _process(delta):
 		if -bar.position.x - bars_spawner.position.x >= bar_len*1.5 and cur_bar_index + 1 <= len(tracks_data[0].bars):
 			remove_bar(bar)
 			add_bar()
-			
-			#print(len(bars))
-			
 
-		
-	
-	
-#func _input(event):
-	#if player_node.is_drum:
-		#if event.is_action_pressed("space"):
-			#is_pressed = true
-			#is_collecting = true
-			#if perfect:
-				#print("P")
-				#current_beat.queue_free()
-				#increment_score(3)
-			#elif good:
-				#print("G")
-				#current_beat.queue_free()
-				#increment_score(2)
-			#elif ok:
-				#print("O")
-				#current_beat.queue_free()
-				#increment_score(1)
-		#elif event.is_action_released("space"):
-			#is_pressed = false
-			#is_collecting = false
-			#
-		#if event.is_action_pressed("space") and !perfect and !good and !ok:
-			#increment_score(0)
-	
+
 func increment_score(by):
 	if by > 0:
-		combo += 1
+		drum_combo += 1
 	else:
-		combo = 0
-	
-	#if by == 3:
-		#great += 1
-	#elif by == 2:
-		#good += 1
-	#elif by == 1:
-		#okay += 1
-	#else:
-		#missed += 1
-	
-	
-	score += by * combo
-	if combo > 0:
-		get_parent().combo_node.text = str(combo) + " combo!"
-		if combo > max_combo:
-			max_combo = combo
-	elif combo == 0:
-		get_parent().combo_node.text = " "
+		drum_combo = 0
+
+	drum_score += by * drum_combo
+	drumScoreChanged.emit()
+	if drum_combo > 0:
+		drumcombo_node.text = str(drum_combo) + " combo!"
+
+	elif drum_combo == 0:
+		drumcombo_node.text = " "
 
 func add_bars():
 	for i in range(3):
@@ -120,6 +87,7 @@ func add_bar():
 	new_bar.bar_data = get_bar_data()
 	bars.append(new_bar)
 	bars_spawner.add_child(new_bar)
+	new_bar.add_to_group("bars")
 	curr_loc += Vector2(bar_len, 0)
 	cur_bar_index += 1
 
@@ -134,39 +102,33 @@ func remove_bar(bar):
 
 func _on_perfect_area_entered(area):
 	if area.name == "Area2D":
-		is_colliding = true
 		perfect = true
 
 
 func _on_good_area_entered(area):
 	if area.name == "Area2D":
-		is_colliding = true
 		good = true
 
 
 
 func _on_ok_area_entered(area):
 	if area.name == "Area2D": 
-		is_colliding = true
 		ok = true
 		current_beat = area.get_parent()
 
 
 func _on_perfect_area_exited(area):
 	if area.name == "Area2D":
-		is_colliding = false
 		perfect = false
 
 
 func _on_good_area_exited(area):
 	if area.name == "Area2D":
-		is_colliding = false
 		good = false
 
 
 func _on_ok_area_exited(area):
 	if area.name == "Area2D":
-		is_colliding = false
 		ok = false
 		current_beat = null
 
