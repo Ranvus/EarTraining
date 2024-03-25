@@ -99,20 +99,41 @@ func note_input():
 		teacher.right_answer()
 		
 func beat_input():
-	if Input.is_action_just_pressed("space"):
-		if road.perfect:
-			#print("P")
-			road.current_beat.queue_free()
+	if Input.is_action_just_pressed("left"):
+		if road.perfect_l:
+			print("P")
+			#road.current_beat.queue_free()
 			road.increment_score(3)
-		elif road.good:
-			#print("G")
-			road.current_beat.queue_free()
+			road.current_beat.destroy(3)
+		elif road.good_l:
+			print("G")
+			#road.current_beat.queue_free()
 			road.increment_score(2)
-		elif road.ok:
-			#print("O")
-			road.current_beat.queue_free()
+			road.current_beat.destroy(2)
+		elif road.ok_l:
+			print("O")
+			#road.current_beat.queue_free()
 			road.increment_score(1)
-		if !road.perfect and !road.good and !road.ok:
+			road.current_beat.destroy(1)
+		if !road.perfect_l and !road.good_l and !road.ok_l:
+			road.increment_score(0)
+	if Input.is_action_just_pressed("right"):
+		if road.perfect_r:
+			print("P")
+			#road.current_beat.queue_free()
+			road.increment_score(3)
+			road.current_beat.destroy(3)
+		elif road.good_r:
+			print("G")
+			#road.current_beat.queue_free()
+			road.increment_score(2)
+			road.current_beat.destroy(2)
+		elif road.ok_r:
+			print("O")
+			#road.current_beat.queue_free()
+			road.increment_score(1)
+			road.current_beat.destroy(1)
+		if !road.perfect_r and !road.good_r and !road.ok_r:
 			road.increment_score(0)
 		
 

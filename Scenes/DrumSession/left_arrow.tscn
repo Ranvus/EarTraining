@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6a11no5re6pj"]
+
+[ext_resource type="Texture2D" uid="uid://dw3uwgcmml1" path="res://Sprites/Drum Session/LeftArrow.png" id="1_4tc07"]
+[ext_resource type="Script" path="res://Scripts/DrumSession/left_arrow.gd" id="1_wee58"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4udk8"]
+size = Vector2(4, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxol4"]
+size = Vector2(10, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_auqu5"]
+size = Vector2(20, 18)
+
+[node name="LeftArrow" type="Node2D"]
+script = ExtResource("1_wee58")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4tc07")
+
+[node name="Perfect" type="Area2D" parent="."]
+position = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perfect"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4udk8")
+debug_color = Color(0, 0.65098, 0.0862745, 0.419608)
+
+[node name="Good" type="Area2D" parent="."]
+position = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Good"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_cxol4")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Ok" type="Area2D" parent="."]
+position = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ok"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_auqu5")
+debug_color = Color(0.972549, 0, 0.45098, 0.419608)
+
+[connection signal="area_entered" from="Perfect" to="." method="_on_perfect_area_entered"]
+[connection signal="area_exited" from="Perfect" to="." method="_on_perfect_area_exited"]
+[connection signal="area_entered" from="Good" to="." method="_on_good_area_entered"]
+[connection signal="area_exited" from="Good" to="." method="_on_good_area_exited"]
+[connection signal="area_entered" from="Ok" to="." method="_on_ok_area_entered"]
+[connection signal="area_exited" from="Ok" to="." method="_on_ok_area_exited"]

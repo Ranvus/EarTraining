@@ -18,9 +18,12 @@ var speed
 #длина доли в пикселях
 var beat_scale
 
-var perfect
-var good
-var ok
+var perfect_l
+var good_l
+var ok_l
+var perfect_r
+var good_r
+var ok_r
 var current_beat = null
 
 var cur_bar_index
@@ -35,7 +38,7 @@ func setup(game):
 	bar_len = game.bar_len
 	curr_loc = Vector2(0, 0)
 	beat_scale = game.beat_scale
-	cur_bar_index = 0
+	cur_bar_index = 18
 	tracks_data = game.map.tracks
 	add_bars()
 		
@@ -92,7 +95,9 @@ func add_bar():
 	cur_bar_index += 1
 
 func get_bar_data():
-	var bar_data = tracks_data[0].bars[cur_bar_index]
+	var left_data = tracks_data[0].bars[cur_bar_index]
+	var right_data = tracks_data[1].bars[cur_bar_index]
+	var bar_data = [left_data, right_data]
 	return bar_data
 
 func remove_bar(bar):
@@ -100,42 +105,45 @@ func remove_bar(bar):
 	bars.erase(bar)
 
 
-func _on_perfect_area_entered(area):
-	if area.name == "Area2D":
-		perfect = true
-
-
-func _on_good_area_entered(area):
-	if area.name == "Area2D":
-		good = true
-
-
-
-func _on_ok_area_entered(area):
-	if area.name == "Area2D": 
-		ok = true
-		current_beat = area.get_parent()
-
-
-func _on_perfect_area_exited(area):
-	if area.name == "Area2D":
-		perfect = false
-
-
-func _on_good_area_exited(area):
-	if area.name == "Area2D":
-		good = false
-
-
-func _on_ok_area_exited(area):
-	if area.name == "Area2D":
-		ok = false
-		current_beat = null
+#func _on_perfect_area_entered(area):
+	#if area.name == "Area2D":
+		#perfect = true
+#
+#
+#func _on_good_area_entered(area):
+	#if area.name == "Area2D":
+		#good = true
+#
+#
+#
+#func _on_ok_area_entered(area):
+	#if area.name == "Area2D": 
+		#ok = true
+		#current_beat = area.get_parent()
+#
+#
+#func _on_perfect_area_exited(area):
+	#if area.name == "Area2D":
+		#perfect = false
+#
+#
+#func _on_good_area_exited(area):
+	#if area.name == "Area2D":
+		#good = false
+#
+#
+#func _on_ok_area_exited(area):
+	#if area.name == "Area2D":
+		#ok = false
+		#current_beat = null
 
 
 func _on_end_area_entered(area):
 	if area.name == "Area2D":
 		area.get_parent().queue_free()
 		increment_score(0)
-	elif area.name == "BarCollision":
+
+
+func _on_end_bar_area_entered(area):
+	if area.name == "BarCollision":
 		area.get_parent().get_child(0).hide()

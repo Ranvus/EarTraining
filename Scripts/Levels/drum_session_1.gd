@@ -49,8 +49,8 @@ func calc_params():
 	speed = bar_len / float(4 * spb)
 	#beat_scale = bar_len / 4
 	beat_scale = 0.16
-	start_pos_in_sec = (float(map.start_pos)/400.0) * spb
-	#start_pos_in_sec = 64.8
+	#start_pos_in_sec = (float(map.start_pos)/400.0) * spb
+	start_pos_in_sec = 43.2
 
 func load_map():
 	var file = FileAccess.open(map_file, FileAccess.READ)
