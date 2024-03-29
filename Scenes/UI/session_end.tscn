@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsmhycxtja4hj"]
+[gd_scene load_steps=5 format=3 uid="uid://bsmhycxtja4hj"]
 
 [ext_resource type="Script" path="res://Scripts/UI/session_end.gd" id="1_h60st"]
+[ext_resource type="FontFile" uid="uid://bqtl52xy2arj6" path="res://Fonts/superstar_memesbruh03.ttf" id="2_esnat"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtx6u"]
 bg_color = Color(0.752941, 0.243137, 0.419608, 1)
@@ -54,6 +55,7 @@ offset_right = 87.0
 offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_esnat")
 theme_override_font_sizes/font_size = 20
 text = "Lesson is Finished"
 
@@ -69,6 +71,7 @@ offset_right = 54.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_esnat")
 theme_override_font_sizes/font_size = 16
 text = "Score:"
 
@@ -83,6 +86,7 @@ offset_right = 54.0
 offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_esnat")
 theme_override_font_sizes/font_size = 16
 text = "Max score:"
 
@@ -98,6 +102,7 @@ offset_right = -39.0
 offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_esnat")
 theme_override_styles/normal = SubResource("StyleBoxFlat_huwrp")
 text = "Retry Session"
 
@@ -113,6 +118,7 @@ offset_right = 136.0
 offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_esnat")
 theme_override_styles/normal = SubResource("StyleBoxFlat_huwrp")
 text = "Quit Session"
 

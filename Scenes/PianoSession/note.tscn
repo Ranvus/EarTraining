@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://bu25o5py640l8"]
+
+[ext_resource type="Script" path="res://Scripts/note.gd" id="1_es48r"]
+[ext_resource type="Texture2D" uid="uid://c6drc7ubahci2" path="res://Sprites/Piano Session/PianoNote.png" id="2_ieuc2"]
+[ext_resource type="AudioStream" uid="uid://bg73wt0cyg2xo" path="res://Audio/Notes/C4_piano.wav" id="3_pvghl"]
+[ext_resource type="AudioStream" uid="uid://dt5ypjjuvlcjk" path="res://Audio/Notes/D4_piano.wav" id="4_f7usy"]
+[ext_resource type="AudioStream" uid="uid://dcsb60x28qfbe" path="res://Audio/Notes/E4_piano.wav" id="5_g6xow"]
+[ext_resource type="AudioStream" uid="uid://grinj2ngekgd" path="res://Audio/Notes/F4_piano.wav" id="6_buxt2"]
+[ext_resource type="AudioStream" uid="uid://bte2mc7eo0g27" path="res://Audio/Notes/G4_piano.wav" id="7_ayd06"]
+[ext_resource type="AudioStream" uid="uid://cyauyrko3uxst" path="res://Audio/Notes/A4_piano.wav" id="8_hq4fm"]
+[ext_resource type="AudioStream" uid="uid://cs8x0ee7e7i3g" path="res://Audio/Notes/B4_piano.wav" id="9_6exut"]
+[ext_resource type="AudioStream" uid="uid://cglgle0vo1bc8" path="res://Audio/Notes/C5_piano.wav" id="10_p1lp5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5t7vw"]
+radius = 5.0
+
+[node name="Note" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_es48r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+texture = ExtResource("2_ieuc2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5t7vw")
+
+[node name="C4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pvghl")
+
+[node name="C#4" type="AudioStreamPlayer2D" parent="."]
+
+[node name="D4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_f7usy")
+
+[node name="D#4" type="AudioStreamPlayer2D" parent="."]
+
+[node name="E4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g6xow")
+
+[node name="F4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_buxt2")
+
+[node name="F#4" type="AudioStreamPlayer2D" parent="."]
+
+[node name="G4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ayd06")
+
+[node name="G#4" type="AudioStreamPlayer2D" parent="."]
+
+[node name="A4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_hq4fm")
+
+[node name="A#4" type="AudioStreamPlayer2D" parent="."]
+
+[node name="B4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_6exut")
+
+[node name="C5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_p1lp5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

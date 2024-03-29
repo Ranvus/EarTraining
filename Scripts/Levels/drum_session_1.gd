@@ -1,13 +1,11 @@
 extends Node
 
-@onready var conductor = $DrumTeacher/AudioStreamPlayer2D
-@onready var drum_teacher = $DrumTeacher
-@export var note : PackedScene
+@onready var drumteacher_node = get_node_or_null("DrumTeacher")
 @onready var road_node = get_node_or_null("Road")
 @onready var score_node = get_node_or_null("DrumUI/Score")
 @onready var combo_node = get_node_or_null("DrumUI/Combo")
-@onready var savesystem_node = get_node_or_null("SaveSystem")
-@onready var sessionend_node = get_node_or_null("SessionEnd")
+@onready var save_system_node = get_node_or_null("SaveSystem")
+@onready var session_end_node = get_node_or_null("SessionEnd")
 
 var audio
 var map
@@ -30,17 +28,17 @@ func _ready():
 	map = load_map()
 	calc_params()	
 	
-	drum_teacher.setup(self)
+	drumteacher_node.setup(self)
 	road_node.setup(self)
 	
-	sessionend_node.hide()	
-	savesystem_node.load_data(savesystem_node.SAVE_DIR + savesystem_node.SAVE_FILE_NAME)
+	session_end_node.hide()	
+	save_system_node.load_data(save_system_node.SAVE_DIR + save_system_node.SAVE_FILE_NAME)
 
 func _process(_delta):
 	#print(get_tree().get_nodes_in_group("beats").size())
 	if get_tree().get_nodes_in_group("beats").size() == 0:
-		savesystem_node.save_data(savesystem_node.SAVE_DIR + savesystem_node.SAVE_FILE_NAME)
-		sessionend_node.show()
+		save_system_node.save_data(save_system_node.SAVE_DIR + save_system_node.SAVE_FILE_NAME)
+		session_end_node.show()
 
 func calc_params():
 	bpm = int(map.tempo)
@@ -49,8 +47,8 @@ func calc_params():
 	speed = bar_len / float(4 * spb)
 	#beat_scale = bar_len / 4
 	beat_scale = 0.16
-	#start_pos_in_sec = (float(map.start_pos)/400.0) * spb
-	start_pos_in_sec = 43.2
+	start_pos_in_sec = (float(map.start_pos)/400.0) * spb
+	#start_pos_in_sec = 43.2
 
 func load_map():
 	var file = FileAccess.open(map_file, FileAccess.READ)

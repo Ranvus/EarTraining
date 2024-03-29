@@ -7,6 +7,7 @@ func _process(delta):
 	position += speed * direction * delta
 
 func _on_body_entered(body):
-	#print(body.name)
 	if body.name == "Player":
 		queue_free()
+		body.penalty()
+		body.teacher.notes_destroy()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6a11no5re6pj"]
 
-[ext_resource type="Texture2D" uid="uid://dw3uwgcmml1" path="res://Sprites/Drum Session/LeftArrow.png" id="1_4tc07"]
 [ext_resource type="Script" path="res://Scripts/DrumSession/left_arrow.gd" id="1_wee58"]
+[ext_resource type="Texture2D" uid="uid://cqvt0nbbrvnqd" path="res://Sprites/Drum Session/Drum Road/Kick.png" id="2_asr4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4udk8"]
 size = Vector2(4, 18)
@@ -16,7 +16,7 @@ size = Vector2(20, 18)
 script = ExtResource("1_wee58")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4tc07")
+texture = ExtResource("2_asr4a")
 
 [node name="Perfect" type="Area2D" parent="."]
 position = Vector2(1, -1)

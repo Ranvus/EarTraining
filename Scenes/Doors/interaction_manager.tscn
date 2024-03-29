@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://v5npyqln8040"]
+
+[ext_resource type="FontFile" uid="uid://bqtl52xy2arj6" path="res://Fonts/superstar_memesbruh03.ttf" id="1_axaxt"]
+[ext_resource type="Script" path="res://Scripts/Doors/interaction_manager.gd" id="1_vm0ff"]
+
+[node name="InteractionManager" type="Node2D"]
+script = ExtResource("1_vm0ff")
+
+[node name="Label" type="Label" parent="."]
+z_index = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_right = 47.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_axaxt")
+text = "[E] TO OPEN"
+horizontal_alignment = 1
+vertical_alignment = 1

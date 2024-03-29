@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://yuxyqbhyhaa4"]
 
 [ext_resource type="Script" path="res://Scripts/bar.gd" id="1_10jnf"]
-[ext_resource type="Texture2D" uid="uid://cr60sl1gb11hl" path="res://Sprites/Drum Session/Bar2.png" id="2_1xaty"]
+[ext_resource type="Texture2D" uid="uid://cstrug8wkhak0" path="res://Sprites/Drum Session/Drum Road/Bar.png" id="2_3elni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2xlg"]
 size = Vector2(2, 64)
@@ -10,7 +10,7 @@ size = Vector2(2, 64)
 script = ExtResource("1_10jnf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1xaty")
+texture = ExtResource("2_3elni")
 
 [node name="BarCollision" type="Area2D" parent="."]
 

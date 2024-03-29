@@ -2,30 +2,27 @@ extends CharacterBody2D
 
 signal healthChanged
 
+@onready var teacher1_node = get_node_or_null("../SecondThirdTeacher")
+@onready var teacher2_node = get_node_or_null("../FifthTeacher")
+@onready var teacher3_node = get_node_or_null("../OctaveTeacher")
+@onready var road_node = get_node_or_null("../Road")
+@onready var animation_player_node = get_node_or_null("AnimationPlayer")
+@onready var sprite_node = get_node_or_null("Sprite2D")
+
 #переменные персонажа
 var speed : int = 400
 var max_health : int
 var cur_health : int
 var loose : bool = false
-
-
 var answer : String = "Blank"
-@onready var teacher1 = get_node_or_null("../SecondThirdTeacher")
-@onready var teacher2 = get_node_or_null("../FifthTeacher")
-@onready var teacher3 = get_node_or_null("../OctaveTeacher")
-@onready var road = get_node_or_null("../Road")
 
-var teacher
-
-var piano_score = 0
-
-var screen_size : Vector2
-
+#булевые переменные
 var is_walk : bool = false
 var is_piano : bool = false
 var is_drum : bool = false
 var is_pressed : bool = false
 
+var teacher
 
 func _ready():
 	if "Drum" in get_parent().name:
@@ -41,12 +38,12 @@ func _ready():
 		is_piano = false
 		is_drum = false
 		
-	if teacher1:
-		teacher = teacher1
-	elif teacher2:
-		teacher = teacher2
-	elif teacher3:
-		teacher = teacher3
+	if teacher1_node:
+		teacher = teacher1_node
+	elif teacher2_node:
+		teacher = teacher2_node
+	elif teacher3_node:
+		teacher = teacher3_node
 		
 	reset()
 	#print(teacher.name)
@@ -100,45 +97,44 @@ func note_input():
 		
 func beat_input():
 	if Input.is_action_just_pressed("left"):
-		if road.perfect_l:
+		if road_node.perfect_l:
 			print("P")
-			#road.current_beat.queue_free()
-			road.increment_score(3)
-			road.current_beat.destroy(3)
-		elif road.good_l:
+			#road_node.current_beat.queue_free()
+			road_node.increment_score(3)
+			road_node.current_beat.destroy(3)
+		elif road_node.good_l:
 			print("G")
-			#road.current_beat.queue_free()
-			road.increment_score(2)
-			road.current_beat.destroy(2)
-		elif road.ok_l:
+			#road_node.current_beat.queue_free()
+			road_node.increment_score(2)
+			road_node.current_beat.destroy(2)
+		elif road_node.ok_l:
 			print("O")
-			#road.current_beat.queue_free()
-			road.increment_score(1)
-			road.current_beat.destroy(1)
-		if !road.perfect_l and !road.good_l and !road.ok_l:
-			road.increment_score(0)
+			#road_node.current_beat.queue_free()
+			road_node.increment_score(1)
+			road_node.current_beat.destroy(1)
+		if !road_node.perfect_l and !road_node.good_l and !road_node.ok_l:
+			road_node.increment_score(0)
 	if Input.is_action_just_pressed("right"):
-		if road.perfect_r:
+		if road_node.perfect_r:
 			print("P")
-			#road.current_beat.queue_free()
-			road.increment_score(3)
-			road.current_beat.destroy(3)
-		elif road.good_r:
+			#road_node.current_beat.queue_free()
+			road_node.increment_score(3)
+			road_node.current_beat.destroy(3)
+		elif road_node.good_r:
 			print("G")
-			#road.current_beat.queue_free()
-			road.increment_score(2)
-			road.current_beat.destroy(2)
-		elif road.ok_r:
+			#road_node.current_beat.queue_free()
+			road_node.increment_score(2)
+			road_node.current_beat.destroy(2)
+		elif road_node.ok_r:
 			print("O")
-			#road.current_beat.queue_free()
-			road.increment_score(1)
-			road.current_beat.destroy(1)
-		if !road.perfect_r and !road.good_r and !road.ok_r:
-			road.increment_score(0)
+			#road_node.current_beat.queue_free()
+			road_node.increment_score(1)
+			road_node.current_beat.destroy(1)
+		if !road_node.perfect_r and !road_node.good_r and !road_node.ok_r:
+			road_node.increment_score(0)
 		
 
 func _physics_process(_delta):
-	#Global.piano_score = piano_score
 	if is_walk:
 		dir_input()
 		move_and_slide()
@@ -148,19 +144,21 @@ func _physics_process(_delta):
 			die()
 	elif is_drum:
 		beat_input()
+		
+	if velocity.length() != 0:
+		animation_player_node.play("Walk")
+	else:
+		animation_player_node.play("Idle")
+		
+	if velocity.x < 0:
+		sprite_node.flip_h = true
+	elif velocity.x > 0:
+		sprite_node.flip_h = false
+
+func penalty():
+	cur_health -= 1
+	healthChanged.emit(cur_health)
 
 func die():
 	if cur_health <= 0:
 		loose = true
-
-#func right_answer():
-	#if teacher.interval_answer == answer:
-		#piano_score += 1
-		#pianoScoreChanged.emit()
-		#for i in get_tree().get_nodes_in_group("notes"):
-			#i.queue_free()
-	#else:
-		#cur_health -= 1
-		#healthChanged.emit()
-		#for i in get_tree().get_nodes_in_group("notes"):
-			#i.queue_free()

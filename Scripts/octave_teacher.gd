@@ -4,8 +4,8 @@ signal pianoOctaveScoreChanged
 
 @export var note : PackedScene
 
-#@onready var animation = $AnimatedSprite2D
-@onready var player = get_node("../Player")
+@onready var player_node = get_node_or_null("../Player")
+@onready var animated_sprite_node = get_node_or_null("AnimatedSprite2D")
 
 var bpm : float = 100.0
 var fire_rate : float
@@ -70,6 +70,7 @@ var interval_answer : String
 
 func _ready():
 	fire_rate = (60 / bpm) * 2
+	animated_sprite_node.play()
 	
 func _process(_delta):
 	Global.octave_score = octave_score
@@ -102,7 +103,7 @@ func play_note():
 func shoot_note():
 	var new_note = note.instantiate()
 	new_note.position = global_position
-	new_note.direction = (player.position - position).normalized()
+	new_note.direction = (player_node.position - position).normalized()
 	new_note.add_to_group("notes")
 	get_tree().root.call_deferred("add_child", new_note)
 	
@@ -113,13 +114,13 @@ func calculate_interval(note1, note2):
 
 
 func right_answer():
-	if interval_answer == player.answer:
+	if interval_answer == player_node.answer:
 		octave_score += 1
 		pianoOctaveScoreChanged.emit()
 		for i in get_tree().get_nodes_in_group("notes"):
 			i.queue_free()
 	else:
-		player.cur_health -= 1
-		player.healthChanged.emit(player.cur_health)
+		player_node.cur_health -= 1
+		player_node.healthChanged.emit(player_node.cur_health)
 		for i in get_tree().get_nodes_in_group("notes"):
 			i.queue_free()

@@ -1,25 +1,23 @@
 extends Label
 
-@onready var player = get_node_or_null("../../Player")
-@onready var teacher1 = get_node_or_null("../../SecondThirdTeacher")
-@onready var teacher2 = get_node_or_null("../../FifthTeacher")
-@onready var teacher3 = get_node_or_null("../../OctaveTeacher")
-#var teacher
+@onready var teacher1_node = get_node_or_null("../../SecondThirdTeacher")
+@onready var teacher2_node = get_node_or_null("../../FifthTeacher")
+@onready var teacher3_node = get_node_or_null("../../OctaveTeacher")
 
 func _ready():
-	if teacher1:
-		teacher1.pianoUnisonScoreChanged.connect(update_unison)
-	elif teacher2:
-		teacher2.pianoFifthScoreChanged.connect(update_fifth)
-	elif teacher3:
-		teacher3.pianoOctaveScoreChanged.connect(update_octave)
+	if teacher1_node:
+		teacher1_node.pianoUnisonScoreChanged.connect(update_unison)
+	elif teacher2_node:
+		teacher2_node.pianoFifthScoreChanged.connect(update_fifth)
+	elif teacher3_node:
+		teacher3_node.pianoOctaveScoreChanged.connect(update_octave)
 	
 func _process(_delta):
-	if teacher1:
+	if teacher1_node:
 		update_unison()
-	elif teacher2:
+	elif teacher2_node:
 		update_fifth()
-	elif teacher3:
+	elif teacher3_node:
 		update_octave()
 	
 

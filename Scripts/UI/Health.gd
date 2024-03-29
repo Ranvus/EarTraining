@@ -1,10 +1,10 @@
 extends Label
 
-@onready var player = get_node_or_null("../../Player")
+@onready var player_node = get_node_or_null("../../Player")
 
 func _ready():
-	player.healthChanged.connect(update)
+	player_node.healthChanged.connect(update)
 	update()
 
 func update():
-	text = str(player.cur_health)
+	text = str(player_node.cur_health)

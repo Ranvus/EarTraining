@@ -1,7 +1,7 @@
 extends Panel
 
-@onready var sprite = get_node_or_null("Sprite2D")
+@onready var sprite_node = get_node_or_null("Sprite2D")
 
 func update(whole : bool):
-	if whole : sprite.frame = 0
-	else : sprite.frame = 4
+	if whole : sprite_node.frame = 0
+	else : sprite_node.frame = 4

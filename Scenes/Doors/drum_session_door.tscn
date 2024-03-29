@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds6h5om8bgplq"]
+[gd_scene load_steps=4 format=3 uid="uid://ds6h5om8bgplq"]
 
 [ext_resource type="Script" path="res://Scripts/Doors/drum_session_door.gd" id="1_l6x8d"]
+[ext_resource type="Texture2D" uid="uid://bk5t7j6w1epst" path="res://Sprites/Tiles/DrumDoor.png" id="2_ghbeq"]
+[ext_resource type="PackedScene" uid="uid://cqlx7bkd154is" path="res://Scenes/Doors/interaction_area.tscn" id="2_oakw3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_agdn1"]
-
-[node name="DrumSessionDoor" type="Area2D"]
+[node name="DrumSessionDoor" type="Node2D"]
 script = ExtResource("1_l6x8d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_agdn1")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ghbeq")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="InteractionArea" parent="." instance=ExtResource("2_oakw3")]
+action_name = "open"
