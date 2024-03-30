@@ -6,11 +6,14 @@ extends Node2D
 func _on_perfect_area_entered(area):
 	if area.name == "Area2D":
 		road_node.perfect_l = true
+		#road_node.current_beat = area.get_parent()
+		
 
 
 func _on_perfect_area_exited(area):
 	if area.name == "Area2D":
 		road_node.perfect_l = false
+		#road_node.current_beat = null
 
 
 func _on_good_area_entered(area):

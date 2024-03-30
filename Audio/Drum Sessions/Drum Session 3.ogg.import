@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://efi6kcw3m5m4"
+path="res://.godot/imported/Drum Session 3.ogg-338b132e6cbadc28ab546a230aa39d0b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Drum Sessions/Drum Session 3.ogg"
+dest_files=["res://.godot/imported/Drum Session 3.ogg-338b132e6cbadc28ab546a230aa39d0b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

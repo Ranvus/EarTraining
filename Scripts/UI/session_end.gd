@@ -3,10 +3,10 @@ extends CanvasLayer
 @onready var score_node = get_node_or_null("ScoreLabel")
 @onready var max_score_node = get_node_or_null("MaxScoreLabel")
 
-var drumsession : String
+var drum_session : String
 
 func _ready():
-	drumsession = "res://Scenes/Levels/drum_session_" + get_parent().name.substr(11, 1) + ".tscn"
+	drum_session = "res://Scenes/Levels/drum_session_" + get_parent().name.substr(11, 1) + ".tscn"
 
 func _process(_delta):
 	if "1" in get_parent().name:
@@ -32,7 +32,7 @@ func _process(_delta):
 
 
 func _on_retry_btn_pressed():
-	get_tree().call_deferred("change_scene_to_file", drumsession)
+	get_tree().call_deferred("change_scene_to_file", drum_session)
 
 
 func _on_quit_session_btn_pressed():

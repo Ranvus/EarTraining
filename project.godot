@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ear Training"
-run/main_scene="res://Scenes/Levels/drum_session_1.tscn"
+run/main_scene="res://Scenes/Levels/drum_session_2.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
