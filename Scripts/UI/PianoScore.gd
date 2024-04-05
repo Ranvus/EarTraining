@@ -22,10 +22,10 @@ func _process(_delta):
 	
 
 func update_unison():
-	text = str(Global.unison_score)
+	text = str(Global.piano1_score)
 	
 func update_fifth():
-	text = str(Global.fifth_score)
+	text = str(Global.piano2_score)
 	
 func update_octave():
-	text = str(Global.octave_score)
+	text = str(Global.piano3_score)

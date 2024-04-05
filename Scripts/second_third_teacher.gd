@@ -6,12 +6,13 @@ signal pianoUnisonScoreChanged
 
 @onready var player_node = get_node_or_null("../Player")
 @onready var animated_sprite_node = get_node_or_null("AnimatedSprite2D")
+@onready var session_node = get_node_or_null("../")
 
-var bpm : float = 100.0
+var bpm : float
 var fire_rate : float
 var can_play = true
 
-var unison_score = 0
+var piano1_score = 0
 
 @onready var C3_note = $Notes/C3
 @onready var Db3_note = $Notes/Db3
@@ -69,11 +70,12 @@ var interval
 var interval_answer : String
 
 func _ready():
-	fire_rate = (60 / bpm) * 2
 	animated_sprite_node.play()
 	
 func _process(_delta):
-	Global.unison_score = unison_score
+	Global.piano1_score = piano1_score
+	bpm = session_node.bpm
+	fire_rate = (60 / bpm) * 2
 	play_note()
 
 func play_note():
@@ -113,7 +115,7 @@ func calculate_interval(note1, note2):
 
 func right_answer():
 	if interval_answer == player_node.answer:
-		unison_score += 1
+		piano1_score += 1
 		pianoUnisonScoreChanged.emit()
 		for i in get_tree().get_nodes_in_group("notes"):
 			i.queue_free()

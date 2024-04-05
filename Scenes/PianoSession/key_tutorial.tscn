@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://biwkqlfvcf10d"]
+
+[ext_resource type="Texture2D" uid="uid://vssced2parif" path="res://Sprites/Piano Session/KeyTutorial.png" id="1_bc4et"]
+
+[node name="KeyTutorial" type="Node2D"]
+modulate = Color(1, 1, 1, 0.65098)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bc4et")

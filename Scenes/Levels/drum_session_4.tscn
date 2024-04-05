@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgxt5wdmtgkyx"]
+[gd_scene load_steps=10 format=3 uid="uid://bgxt5wdmtgkyx"]
 
 [ext_resource type="PackedScene" uid="uid://cltmd060wny4o" path="res://Scenes/Levels/tile_map.tscn" id="1_au4mc"]
 [ext_resource type="Script" path="res://Scripts/Levels/drum_session.gd" id="1_yjft7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dwn72018ouwf3" path="res://Scenes/UI/drum_ui.tscn" id="5_adsx4"]
 [ext_resource type="PackedScene" uid="uid://bhxkpn2he55t1" path="res://Scenes/save_system.tscn" id="6_nipki"]
 [ext_resource type="PackedScene" uid="uid://bsmhycxtja4hj" path="res://Scenes/UI/session_end.tscn" id="7_6aybu"]
+[ext_resource type="PackedScene" uid="uid://cfxc8wlc0l4aj" path="res://Scenes/UI/option_menu.tscn" id="9_4c2lv"]
 
 [node name="DrumSession4" type="Node"]
 script = ExtResource("1_yjft7")
@@ -34,4 +35,9 @@ position = Vector2(582, 54)
 
 [node name="SessionEnd" parent="." instance=ExtResource("7_6aybu")]
 process_mode = 3
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OptionContainer" parent="CanvasLayer" instance=ExtResource("9_4c2lv")]
 visible = false

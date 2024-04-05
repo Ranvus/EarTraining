@@ -2,20 +2,27 @@ extends CanvasLayer
 
 @onready var score_node = get_node_or_null("ScoreLabel")
 @onready var max_score_node = get_node_or_null("MaxScoreLabel")
+@onready var next_btn_node = get_node_or_null("NextSessionBtn")
+#@onready var session_name = get_node_or_null("../")
+
+var session_number
+
+func _ready():
+	session_number = int(get_parent().name.substr(12, 1))
+	print(session_number)
+	
+	if session_number < 3:
+		next_btn_node.show()
+	else:
+		next_btn_node.hide()
 
 func _process(_delta):
-	if "1" in get_parent().name:
-		get_parent().save_system_node.load_data(get_parent().save_system_node.SAVE_DIR + get_parent().save_system_node.SAVE_FILE_NAME)
-		score_node.text = "Score: " + str(Global.unison_score)
-		max_score_node.text = "Max Score: " + str(Global.max_unison_score)
-	elif "2" in get_parent().name:
-		get_parent().save_system_node.load_data(get_parent().save_system_node.SAVE_DIR + get_parent().save_system_node.SAVE_FILE_NAME)
-		score_node.text = "Score: " + str(Global.fifth_score)
-		max_score_node.text = "Max Score: " + str(Global.max_fifth_score)
-	elif "3" in get_parent().name:
-		get_parent().save_system_node.load_data(get_parent().save_system_node.SAVE_DIR + get_parent().save_system_node.SAVE_FILE_NAME)
-		score_node.text = "Score: " + str(Global.octave_score)
-		max_score_node.text = "Max Score: " + str(Global.max_octave_score)
+	get_parent().save_system_node.load_data(get_parent().save_system_node.SAVE_DIR + get_parent().save_system_node.SAVE_FILE_NAME)
+	var session_number = get_parent().name.substr(12, 1)
+	var session_score = "piano" + str(session_number) + "_score"
+	var max_session_score = "max_piano" + str(session_number) + "_score"
+	score_node.text = "Score: " + str(Global.get(session_score))
+	max_score_node.text = "Max Score: " + str(Global.get(max_session_score))
 
 
 func _on_retry_btn_pressed():
@@ -24,4 +31,8 @@ func _on_retry_btn_pressed():
 
 func _on_quit_session_btn_pressed():
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Levels/main.tscn")
-	#get_tree().paused = false
+
+
+func _on_next_session_btn_pressed():
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Levels/piano_session_" + str(session_number + 1) + ".tscn")
+		

@@ -4,4 +4,4 @@ extends Panel
 
 func update(whole : bool):
 	if whole : sprite_node.frame = 0
-	else : sprite_node.frame = 4
+	else : sprite_node.frame = 1

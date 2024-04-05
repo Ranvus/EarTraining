@@ -1,13 +1,24 @@
 extends Area2D
 
-var speed : int = 50
+@onready var session = get_parent().get_child(3)
+
+var speed : float
 var direction : Vector2
+
+func _ready():
+	speed = session.note_speed
 
 func _process(delta):
 	position += speed * direction * delta
 
-func _on_body_entered(body):
-	if body.name == "Player":
-		queue_free()
-		body.penalty()
-		body.teacher.notes_destroy()
+#func _on_body_entered(body):
+	#if body.name == "Player":
+		#queue_free()
+		#body.penalty()
+		#body.teacher.notes_destroy()
+
+
+func _on_area_entered(area):
+	if area.name == "PlayerArea":
+		area.get_parent().penalty()
+		area.get_parent().teacher.notes_destroy()

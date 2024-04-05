@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://me3smrseqnlj"]
+[gd_scene load_steps=11 format=3 uid="uid://me3smrseqnlj"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/piano_session.gd" id="1_ituyx"]
 [ext_resource type="PackedScene" uid="uid://cltmd060wny4o" path="res://Scenes/Levels/tile_map.tscn" id="2_vbf3v"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bl8mthks3p0aw" path="res://Scenes/UI/piano_ui.tscn" id="5_odpdb"]
 [ext_resource type="PackedScene" uid="uid://dgtu4rdbwqlx4" path="res://Scenes/UI/game_over.tscn" id="6_k3b3w"]
 [ext_resource type="PackedScene" uid="uid://bhxkpn2he55t1" path="res://Scenes/save_system.tscn" id="7_cg1lp"]
+[ext_resource type="PackedScene" uid="uid://biwkqlfvcf10d" path="res://Scenes/PianoSession/key_tutorial.tscn" id="8_r6nw2"]
+[ext_resource type="FontFile" uid="uid://bqtl52xy2arj6" path="res://Fonts/superstar_memesbruh03.ttf" id="9_gyb1m"]
+[ext_resource type="PackedScene" uid="uid://cfxc8wlc0l4aj" path="res://Scenes/UI/option_menu.tscn" id="10_bp1kn"]
 
 [node name="PianoSession1" type="Node"]
 script = ExtResource("1_ituyx")
@@ -27,6 +30,58 @@ position = Vector2(569, 166)
 
 [node name="GameOver" parent="." instance=ExtResource("6_k3b3w")]
 process_mode = 3
-visible = false
 
 [node name="SaveSystem" parent="." instance=ExtResource("7_cg1lp")]
+
+[node name="KeyTutorial" parent="." instance=ExtResource("8_r6nw2")]
+position = Vector2(580, 497)
+
+[node name="Label6" type="Label" parent="KeyTutorial"]
+offset_left = 12.6667
+offset_top = 27.0
+offset_right = 40.6667
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("9_gyb1m")
+theme_override_font_sizes/font_size = 12
+text = "Maj 3"
+
+[node name="Label7" type="Label" parent="KeyTutorial"]
+offset_left = 18.6667
+offset_top = -21.3333
+offset_right = 46.6667
+offset_bottom = -9.33335
+theme_override_fonts/font = ExtResource("9_gyb1m")
+theme_override_font_sizes/font_size = 12
+text = "unison"
+
+[node name="Label8" type="Label" parent="KeyTutorial"]
+offset_left = -52.0
+offset_top = 10.3333
+offset_right = -24.0
+offset_bottom = 22.3333
+theme_override_fonts/font = ExtResource("9_gyb1m")
+theme_override_font_sizes/font_size = 12
+text = "Min 2"
+
+[node name="Label9" type="Label" parent="KeyTutorial"]
+offset_left = -36.6667
+offset_top = -5.0
+offset_right = -8.66667
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("9_gyb1m")
+theme_override_font_sizes/font_size = 12
+text = "Min 3"
+
+[node name="Label10" type="Label" parent="KeyTutorial"]
+offset_left = 27.6667
+offset_top = 9.66667
+offset_right = 55.6667
+offset_bottom = 21.6667
+theme_override_fonts/font = ExtResource("9_gyb1m")
+theme_override_font_sizes/font_size = 12
+text = "Maj 2"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OptionContainer" parent="CanvasLayer" instance=ExtResource("10_bp1kn")]
+visible = false

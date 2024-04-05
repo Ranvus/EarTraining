@@ -6,12 +6,13 @@ signal pianoFifthScoreChanged
 
 @onready var player_node = get_node_or_null("../Player")
 @onready var animated_sprite_node = get_node_or_null("AnimatedSprite2D")
+@onready var session_node = get_node_or_null("../")
 
-var bpm : float = 100.0
+var bpm : float
 var fire_rate : float
 var can_play = true
 
-var fifth_score = 0
+var piano2_score = 0
 
 @onready var C3_note = $Notes/C3
 @onready var Db3_note = $Notes/Db3
@@ -67,12 +68,12 @@ var interval
 var interval_answer : String
 
 func _ready():
-	fire_rate = (60 / bpm) * 2
 	animated_sprite_node.play()
 	
 func _process(_delta):
-	Global.fifth_score = fifth_score
-	
+	Global.piano2_score = piano2_score
+	bpm = session_node.bpm
+	fire_rate = (60 / bpm) * 2
 	play_note()
 
 func play_note():
@@ -112,12 +113,14 @@ func calculate_interval(note1, note2):
 
 func right_answer():
 	if interval_answer == player_node.answer:
-		fifth_score += 1
+		piano2_score += 1
 		pianoFifthScoreChanged.emit()
 		for i in get_tree().get_nodes_in_group("notes"):
 			i.queue_free()
 	else:
-		player_node.cur_health -= 1
-		player_node.healthChanged.emit(player_node.cur_health)
-		for i in get_tree().get_nodes_in_group("notes"):
+		player_node.penalty()
+		notes_destroy()
+
+func notes_destroy():
+	for i in get_tree().get_nodes_in_group("notes"):
 			i.queue_free()

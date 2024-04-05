@@ -19,9 +19,9 @@ func save_data(path : String):
 		
 	var data = {
 		"piano_score_data" : {
-			"max_unison_score" : Global.max_unison_score,
-			"max_fifth_score" : Global.max_fifth_score,
-			"max_octave_score" : Global.max_octave_score,
+			"max_piano1_score" : Global.max_piano1_score,
+			"max_piano2_score" : Global.max_piano2_score,
+			"max_piano3_score" : Global.max_piano3_score,
 		},
 		"drum_score_data" : {
 			"max_drum1_score" : Global.max_drum1_score,
@@ -29,6 +29,11 @@ func save_data(path : String):
 			"max_drum3_score" : Global.max_drum3_score,
 			"max_drum4_score" : Global.max_drum4_score,
 			"max_drum5_score" : Global.max_drum5_score,
+		},
+		"total_score_data" : {
+			"total_drum_score" : Global.total_drum_score,
+			"total_piano_score" : Global.total_piano_score,
+			"total_score" : Global.total_score,
 		}
 	}
 	
@@ -52,16 +57,18 @@ func load_data(path : String):
 			printerr("Cannot parse %s as a json_string: (%s)" % [path, content])
 			return
 		
-		Global.max_unison_score = data.piano_score_data.max_unison_score
-		Global.max_fifth_score = data.piano_score_data.max_fifth_score
-		Global.max_octave_score = data.piano_score_data.max_octave_score
+		Global.max_piano1_score = data.piano_score_data.max_piano1_score
+		Global.max_piano2_score = data.piano_score_data.max_piano2_score
+		Global.max_piano3_score = data.piano_score_data.max_piano3_score
 		
 		Global.max_drum1_score = data.drum_score_data.max_drum1_score
-		#Global.max_drum2_score = data.drum_score_data.max_drum2_score
-		#Global.max_drum3_score = data.drum_score_data.max_drum3_score
-		#Global.max_drum4_score = data.drum_score_data.max_drum4_score
-		#Global.max_drum5_score = data.drum_score_data.max_drum5_score
+		Global.max_drum2_score = data.drum_score_data.max_drum2_score
+		Global.max_drum3_score = data.drum_score_data.max_drum3_score
+		Global.max_drum4_score = data.drum_score_data.max_drum4_score
+		Global.max_drum5_score = data.drum_score_data.max_drum5_score
 		
-		
+		Global.total_drum_score = data.total_score_data.total_drum_score
+		Global.total_piano_score = data.total_score_data.total_piano_score
+		Global.total_score = data.total_score_data.total_score
 	else:
 		printerr("Cannot open non-existent file at %s!" % [path])

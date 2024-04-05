@@ -24,6 +24,8 @@ var beat_scale
 var start_pos_in_sec
 
 func _ready():
+	Soundtrack.stop_soundtrack()
+	
 	audio_file = "res://Audio/Drum Sessions/Drum Session " + self.name.substr(11, 1) + ".ogg"
 	map_file = "res://Audio/Drum Sessions/Drum Session " + self.name.substr(11, 1) + ".mboy"
 	

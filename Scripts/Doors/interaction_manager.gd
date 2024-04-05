@@ -21,8 +21,8 @@ func _process(_delta):
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label_node.text = base_text + active_areas[0].action_name + "\n" + active_areas[0].session_name
 		label_node.global_position = active_areas[0].global_position
-		label_node.global_position.y -= 80
-		label_node.global_position.x -= label_node.size.x / 2
+		label_node.global_position.y -= label_node.size.x / 2
+		label_node.global_position.x += 10
 		label_node.show()
 	else:
 		label_node.hide()

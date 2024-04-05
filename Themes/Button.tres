@@ -1,0 +1,57 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://700pymj2stda"]
+
+[ext_resource type="FontFile" uid="uid://bqtl52xy2arj6" path="res://Fonts/superstar_memesbruh03.ttf" id="1_b3kv6"]
+[ext_resource type="Texture2D" uid="uid://c7j5bnlwc7kve" path="res://Sprites/UI/GUI.png" id="2_kvw2y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_peukk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvghu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oamus"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_kvw2y")
+region_rect = Rect2(113, 113, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1pwo"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_kvw2y")
+region_rect = Rect2(113, 98, 30, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ri3j5"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_kvw2y")
+region_rect = Rect2(113, 98, 30, 13)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_b3kv6")
+Button/styles/disabled = SubResource("StyleBoxEmpty_peukk")
+Button/styles/focus = SubResource("StyleBoxEmpty_wvghu")
+Button/styles/hover = SubResource("StyleBoxTexture_oamus")
+Button/styles/normal = SubResource("StyleBoxTexture_k1pwo")
+Button/styles/pressed = SubResource("StyleBoxTexture_ri3j5")
