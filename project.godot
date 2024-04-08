@@ -23,8 +23,9 @@ Soundtrack="*res://Scenes/UI/soundtrack.tscn"
 
 [display]
 
-window/size/viewport_height=640
+window/size/mode=3
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 

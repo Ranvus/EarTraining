@@ -11,12 +11,6 @@ func _ready():
 func _process(delta):
 	position += speed * direction * delta
 
-#func _on_body_entered(body):
-	#if body.name == "Player":
-		#queue_free()
-		#body.penalty()
-		#body.teacher.notes_destroy()
-
 
 func _on_area_entered(area):
 	if area.name == "PlayerArea":

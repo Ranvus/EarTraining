@@ -110,7 +110,7 @@ size = Vector2(13, 14)
 [node name="SecondThirdTeacher" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_rp2tr")
-note = ExtResource("2_yusn4")
+note_tscn = ExtResource("2_yusn4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

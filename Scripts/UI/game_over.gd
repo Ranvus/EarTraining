@@ -3,7 +3,6 @@ extends CanvasLayer
 @onready var score_node = get_node_or_null("ScoreLabel")
 @onready var max_score_node = get_node_or_null("MaxScoreLabel")
 @onready var next_btn_node = get_node_or_null("NextSessionBtn")
-#@onready var session_name = get_node_or_null("../")
 
 var session_number
 
@@ -18,7 +17,6 @@ func _ready():
 
 func _process(_delta):
 	get_parent().save_system_node.load_data(get_parent().save_system_node.SAVE_DIR + get_parent().save_system_node.SAVE_FILE_NAME)
-	var session_number = get_parent().name.substr(12, 1)
 	var session_score = "piano" + str(session_number) + "_score"
 	var max_session_score = "max_piano" + str(session_number) + "_score"
 	score_node.text = "Score: " + str(Global.get(session_score))

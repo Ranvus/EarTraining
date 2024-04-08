@@ -46,7 +46,6 @@ func _ready():
 		teacher = teacher3_node
 		
 	reset()
-	#print(teacher.name)
 	
 func reset():
 	loose = false

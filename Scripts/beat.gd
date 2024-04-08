@@ -25,7 +25,6 @@ func set_line():
 	self.position = Vector2(pos, y)
 
 func destroy(score):
-	#$CPUParticles2D.emitting = true
 	sprite_node.visible = false
 	timer_node.start()
 	hit = true
@@ -38,8 +37,6 @@ func destroy(score):
 	elif score == 1:
 		label_node.text = "OKAY"
 		label_node.modulate = Color("997577")
-	#await get_tree().create_timer(50).timeout
-	#queue_free()
 
 
 func _on_timer_timeout():

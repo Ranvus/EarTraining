@@ -6,5 +6,4 @@ var is_option_open = false
 
 func _ready():
 	Soundtrack.continue_soundtrack()
-	#option_menu_node.set_visible(false)
 

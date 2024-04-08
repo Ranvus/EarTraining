@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal pianoFifthScoreChanged
 
-@export var note : PackedScene
+@export var note_tscn : PackedScene
 
 @onready var player_node = get_node_or_null("../Player")
 @onready var animated_sprite_node = get_node_or_null("AnimatedSprite2D")
@@ -89,9 +89,8 @@ func play_note():
 				else:
 					rand_note = notes[randi_range(notes.find(note_array[i-1])-5, notes.find(note_array[i-1])-7)]
 			note_array.append(rand_note)
-			var notee = get(rand_note)
-			#print(notee)
-			notee.play()
+			var note = get(rand_note)
+			note.play()
 			shoot_note()
 			if i == 0:
 				await get_tree().create_timer(fire_rate).timeout
@@ -100,7 +99,7 @@ func play_note():
 		note_array.clear()
 
 func shoot_note():
-	var new_note = note.instantiate()
+	var new_note = note_tscn.instantiate()
 	new_note.position = global_position
 	new_note.direction = (player_node.position - position).normalized()
 	new_note.add_to_group("notes")

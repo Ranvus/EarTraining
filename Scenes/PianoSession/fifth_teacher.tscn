@@ -110,7 +110,7 @@ size = Vector2(12, 16)
 [node name="FifthTeacher" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_11wcu")
-note = ExtResource("2_rq7no")
+note_tscn = ExtResource("2_rq7no")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xheyd")

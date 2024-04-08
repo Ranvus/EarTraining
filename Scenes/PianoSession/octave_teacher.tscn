@@ -109,7 +109,7 @@ animations = [{
 [node name="OctaveTeacher" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_ylv6x")
-note = ExtResource("2_m3qg2")
+note_tscn = ExtResource("2_m3qg2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jqkb5")

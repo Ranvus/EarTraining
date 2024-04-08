@@ -24,26 +24,7 @@ func _ready():
 	var max_score = "max_piano" + str(session_number) + "_score"
 	label_node.text = "Max Score: " + str(Global.get(max_score))
 	
-#func _process(_delta):
-	#print(Global.max_drum1_score)
 
 func _on_interact():
 	get_tree().call_deferred("change_scene_to_file", session_path)
 
-#func _process(delta):
-	#if Input.is_action_just_pressed("open"):
-		#is_door_opened = true
-	#if Input.is_action_just_released("open"):
-		#is_door_opened = false
-		
-
-#func _input(event):
-	#if event.is_action_pressed("open"):
-		#is_door_opened = true
-	#if event.is_action_released("open"):
-		#is_door_opened = false
-
-#func _on_area_entered(area):
-	#if area.name == "PlayerArea":
-		#var session_path = FILE_BEGIN + str(session_number) + ".tscn"
-		#get_tree().call_deferred("change_scene_to_file", session_path)

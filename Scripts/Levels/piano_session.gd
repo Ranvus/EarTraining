@@ -1,7 +1,6 @@
 extends Node
 
 @onready var game_over_node = get_node_or_null("GameOver")
-#@onready var retrybtn_node = get_node_or_null("GameOver/RetryBtn")
 @onready var player_node = get_node_or_null("Player")
 @onready var teacher1_node = get_node_or_null("SecondThirdTeacher")
 @onready var teacher2_node = get_node_or_null("FifthTeacher")
