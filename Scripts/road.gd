@@ -73,7 +73,7 @@ func increment_score(by):
 	drum_score += by * drum_combo
 	drumScoreChanged.emit()
 	if drum_combo > 0:
-		drumcombo_node.text = str(drum_combo) + " combo!"
+		drumcombo_node.text = str(drum_combo) + " комбо!"
 
 	elif drum_combo == 0:
 		drumcombo_node.text = " "

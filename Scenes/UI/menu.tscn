@@ -39,7 +39,7 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 120
-text = "Ear Training"
+text = "Тренировка слуха"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -55,7 +55,7 @@ focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Options")
 focus_next = NodePath("../Options")
 focus_previous = NodePath("../Quit")
-text = "Train"
+text = "тренировка"
 icon_alignment = 1
 
 [node name="Options" type="Button" parent="MainMenuContainer/VBoxContainer/BtnVBox"]
@@ -66,7 +66,7 @@ focus_neighbor_top = NodePath("../Train")
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Train")
-text = "Options"
+text = "настройки"
 
 [node name="Quit" type="Button" parent="MainMenuContainer/VBoxContainer/BtnVBox"]
 layout_mode = 2
@@ -76,7 +76,7 @@ focus_neighbor_top = NodePath("../Options")
 focus_neighbor_bottom = NodePath("../Train")
 focus_next = NodePath("../Train")
 focus_previous = NodePath("../Options")
-text = "Quit"
+text = "выход"
 
 [node name="TextureRect" type="TextureRect" parent="MainMenuContainer"]
 visible = false

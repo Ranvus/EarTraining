@@ -22,7 +22,7 @@ func _ready():
 	label_node.global_position.y -= 20
 	label_node.global_position.x -= label_node.size.x / 3
 	var max_score = "max_piano" + str(session_number) + "_score"
-	label_node.text = "Max Score: " + str(Global.get(max_score))
+	label_node.text = "Макс. баллов: " + str(Global.get(max_score))
 	
 
 func _on_interact():

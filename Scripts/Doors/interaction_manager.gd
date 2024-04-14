@@ -3,7 +3,7 @@ extends Node2D
 @onready var player_node = get_node_or_null("../Player")
 @onready var label_node = get_node_or_null("Label")
 
-const base_text = "[E] to "
+const base_text = "[E] чтобы "
 
 var active_areas = []
 var can_interact = true

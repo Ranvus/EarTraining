@@ -16,6 +16,6 @@ offset_right = 47.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_axaxt")
-text = "[E] TO OPEN"
+text = "[E] чтобы открыть"
 horizontal_alignment = 1
 vertical_alignment = 1

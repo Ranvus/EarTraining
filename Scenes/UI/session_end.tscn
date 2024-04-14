@@ -47,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_esnat")
 theme_override_font_sizes/font_size = 32
-text = "Lesson is Finished"
+text = "Тренировка окончена"
 
 [node name="ScoreLabel" type="Label" parent="."]
 anchors_preset = 8
@@ -93,7 +93,7 @@ offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_crfby")
-text = "Retry"
+text = "Заново"
 
 [node name="QuitSessionBtn" type="Button" parent="."]
 anchors_preset = 8
@@ -108,7 +108,7 @@ offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_crfby")
-text = "Quit"
+text = "Выход"
 
 [node name="NextSessionBtn" type="Button" parent="."]
 anchors_preset = 8
@@ -123,7 +123,7 @@ offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_crfby")
-text = "Next"
+text = "Далее"
 
 [connection signal="pressed" from="RetryBtn" to="." method="_on_retry_btn_pressed"]
 [connection signal="pressed" from="QuitSessionBtn" to="." method="_on_quit_session_btn_pressed"]

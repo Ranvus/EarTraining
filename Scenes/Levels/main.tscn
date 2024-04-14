@@ -66,13 +66,13 @@ position = Vector2(590, 432)
 modulate = Color(1, 1, 1, 0.65098)
 
 [node name="Label" type="Label" parent="Pointers"]
-offset_left = 840.0
+offset_left = 742.0
 offset_top = 51.0
-offset_right = 1122.0
+offset_right = 1130.0
 offset_bottom = 102.0
 theme_override_fonts/font = ExtResource("8_yvtwe")
 theme_override_font_sizes/font_size = 50
-text = "Ear training"
+text = "Тренировка слуха"
 
 [node name="Label2" type="Label" parent="Pointers"]
 offset_left = 34.0
@@ -81,7 +81,7 @@ offset_right = 385.0
 offset_bottom = 102.0
 theme_override_fonts/font = ExtResource("8_yvtwe")
 theme_override_font_sizes/font_size = 50
-text = "rhythm training"
+text = "Тренировка ритма"
 
 [node name="Sprite2D" type="Sprite2D" parent="Pointers"]
 position = Vector2(1023, 162)
@@ -116,30 +116,29 @@ script = ExtResource("12_m3ysy")
 
 [node name="PianoScore" type="Label" parent="Score"]
 layout_mode = 0
-offset_left = 1601.0
+offset_left = 1523.0
 offset_top = 45.0
-offset_right = 1853.0
+offset_right = 1915.0
 offset_bottom = 83.0
 theme = ExtResource("11_ynwkw")
-theme_override_font_sizes/font_size = 30
-text = "ear training Score
-"
+theme_override_font_sizes/font_size = 32
+text = "баллы за тренировку слуха:"
 
 [node name="DrumScore" type="Label" parent="Score"]
 layout_mode = 0
-offset_left = -712.0
+offset_left = -754.0
 offset_top = 50.0
-offset_right = -419.0
-offset_bottom = 81.0
+offset_right = -354.0
+offset_bottom = 82.0
 theme = ExtResource("11_ynwkw")
-theme_override_font_sizes/font_size = 30
-text = "rhythm training score"
+theme_override_font_sizes/font_size = 32
+text = "Баллы за тренировка ритма: "
 
 [node name="Score" type="Label" parent="Score"]
 layout_mode = 0
-offset_left = 527.0
-offset_top = 74.0
-offset_right = 602.0
-offset_bottom = 105.0
+offset_left = 457.0
+offset_top = 110.0
+offset_right = 637.0
+offset_bottom = 141.0
 theme_override_font_sizes/font_size = 30
-text = "Score"
+text = "Всего баллов:"

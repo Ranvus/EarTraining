@@ -12,7 +12,7 @@ script = ExtResource("1_af8gv")
 texture = ExtResource("2_x8sd7")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_lr20e")]
-action_name = "open"
+action_name = "открыть"
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.65098)
@@ -21,5 +21,5 @@ offset_top = -60.0
 offset_right = 20.0
 offset_bottom = -37.0
 theme_override_fonts/font = ExtResource("4_ouboe")
-theme_override_font_sizes/font_size = 20
-text = "Max Score"
+theme_override_font_sizes/font_size = 16
+text = "Макс. баллов: "

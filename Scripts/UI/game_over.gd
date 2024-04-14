@@ -19,8 +19,8 @@ func _process(_delta):
 	get_parent().save_system_node.load_data(get_parent().save_system_node.SAVE_DIR + get_parent().save_system_node.SAVE_FILE_NAME)
 	var session_score = "piano" + str(session_number) + "_score"
 	var max_session_score = "max_piano" + str(session_number) + "_score"
-	score_node.text = "Score: " + str(Global.get(session_score))
-	max_score_node.text = "Max Score: " + str(Global.get(max_session_score))
+	score_node.text = "Кол-во баллов: " + str(Global.get(session_score))
+	max_score_node.text = "Макс. баллов: " + str(Global.get(max_session_score))
 
 
 func _on_retry_btn_pressed():
