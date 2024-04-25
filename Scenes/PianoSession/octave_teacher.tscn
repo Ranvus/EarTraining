@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=3 uid="uid://dhdkkpsggrkju"]
 
-[ext_resource type="Script" path="res://Scripts/octave_teacher.gd" id="1_ylv6x"]
+[ext_resource type="Script" path="res://Scripts/PianoSession/octave_teacher.gd" id="1_ylv6x"]
 [ext_resource type="AudioStream" uid="uid://dql7nm2jxn4nr" path="res://Audio/Notes/C3_piano.wav" id="2_dk7bq"]
 [ext_resource type="PackedScene" uid="uid://bu25o5py640l8" path="res://Scenes/PianoSession/note.tscn" id="2_m3qg2"]
 [ext_resource type="AudioStream" uid="uid://2yqddtt03sko" path="res://Audio/Notes/Db3_piano.wav" id="3_0ubpq"]

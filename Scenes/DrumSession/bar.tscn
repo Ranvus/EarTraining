@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://yuxyqbhyhaa4"]
 
-[ext_resource type="Script" path="res://Scripts/bar.gd" id="1_10jnf"]
+[ext_resource type="Script" path="res://Scripts/DrumSession/bar.gd" id="1_10jnf"]
 [ext_resource type="Texture2D" uid="uid://cstrug8wkhak0" path="res://Sprites/Drum Session/Drum Road/Bar.png" id="2_3elni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2xlg"]

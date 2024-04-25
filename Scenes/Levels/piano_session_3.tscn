@@ -43,7 +43,7 @@ offset_right = 40.6667
 offset_bottom = 39.0
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_vrphy")
-text = "Maj 7"
+text = "б7"
 
 [node name="Label7" type="Label" parent="KeyTutorial"]
 offset_left = 18.6667
@@ -52,25 +52,25 @@ offset_right = 46.6667
 offset_bottom = -9.33335
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_vrphy")
-text = "octave"
+text = "октава"
 
 [node name="Label8" type="Label" parent="KeyTutorial"]
-offset_left = -52.0
+offset_left = -38.6667
 offset_top = 10.3333
-offset_right = -24.0
-offset_bottom = 22.3333
+offset_right = -22.6667
+offset_bottom = 26.3333
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_vrphy")
-text = "Min 6"
+text = "м6"
 
 [node name="Label9" type="Label" parent="KeyTutorial"]
-offset_left = -36.6667
-offset_top = -5.0
-offset_right = -8.66667
-offset_bottom = 7.0
+offset_left = -22.3333
+offset_top = -5.33333
+offset_right = -6.33333
+offset_bottom = 10.6667
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_vrphy")
-text = "Min 7"
+text = "м7"
 
 [node name="Label10" type="Label" parent="KeyTutorial"]
 offset_left = 27.6667
@@ -79,7 +79,7 @@ offset_right = 55.6667
 offset_bottom = 21.6667
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_vrphy")
-text = "Maj 6"
+text = "б6"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -27,7 +27,7 @@ alignment = 1
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 theme_override_font_sizes/font_size = 120
-text = "Options"
+text = "Настройки"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -41,7 +41,7 @@ size_flags_stretch_ratio = 0.0
 [node name="Label" type="Label" parent="VBoxContainer/OptionsVBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Soundtrack volume"
+text = "громкость музыки"
 
 [node name="VolumeSlider" parent="VBoxContainer/OptionsVBox" instance=ExtResource("2_0odgo")]
 layout_mode = 2
@@ -52,7 +52,7 @@ bus_name = "Soundtrack"
 [node name="Label2" type="Label" parent="VBoxContainer/OptionsVBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Sounds volume"
+text = "громкость звуков"
 
 [node name="VolumeSlider2" parent="VBoxContainer/OptionsVBox" instance=ExtResource("2_0odgo")]
 layout_mode = 2
@@ -60,11 +60,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 bus_name = "Sounds"
 
-[node name="Button" type="Button" parent="VBoxContainer/OptionsVBox"]
+[node name="BackBtn" type="Button" parent="VBoxContainer/OptionsVBox"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Back"
+text = "Назад"
 
-[connection signal="pressed" from="VBoxContainer/OptionsVBox/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsVBox/BackBtn" to="." method="_on_back_btn_pressed"]

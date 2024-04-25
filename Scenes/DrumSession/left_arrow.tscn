@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/DrumSession/left_arrow.gd" id="1_wee58"]
 [ext_resource type="Texture2D" uid="uid://cqvt0nbbrvnqd" path="res://Sprites/Drum Session/Drum Road/Kick.png" id="2_asr4a"]
-[ext_resource type="PackedScene" uid="uid://bgcncg7lxmrjj" path="res://Scenes/beat.tscn" id="3_ymi20"]
+[ext_resource type="PackedScene" uid="uid://bgcncg7lxmrjj" path="res://Scenes/DrumSession/beat.tscn" id="3_ymi20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4udk8"]
 size = Vector2(4, 18)

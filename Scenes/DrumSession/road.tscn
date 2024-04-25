@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://dwtp1ogpi4d2d"]
 
-[ext_resource type="Script" path="res://Scripts/road.gd" id="1_o4f6n"]
+[ext_resource type="Script" path="res://Scripts/DrumSession/road.gd" id="1_o4f6n"]
 [ext_resource type="Texture2D" uid="uid://dxhpebjxsky13" path="res://Sprites/Drum Session/Drum Road/Road.png" id="2_axi5i"]
 [ext_resource type="PackedScene" uid="uid://c6a11no5re6pj" path="res://Scenes/DrumSession/left_arrow.tscn" id="3_b7ckh"]
 [ext_resource type="PackedScene" uid="uid://y8r8yudkouv0" path="res://Scenes/DrumSession/right_arrow.tscn" id="4_hs3xu"]
-[ext_resource type="PackedScene" uid="uid://bgcncg7lxmrjj" path="res://Scenes/beat.tscn" id="5_m2iwv"]
+[ext_resource type="PackedScene" uid="uid://bgcncg7lxmrjj" path="res://Scenes/DrumSession/beat.tscn" id="5_m2iwv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5vy4"]
 size = Vector2(8, 18)

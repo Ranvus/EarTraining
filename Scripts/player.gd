@@ -98,17 +98,14 @@ func beat_input():
 	if Input.is_action_just_pressed("left"):
 		if road_node.perfect_l:
 			print("P")
-			#road_node.current_beat.queue_free()
 			road_node.increment_score(3)
 			road_node.current_beat.destroy(3)
 		elif road_node.good_l:
 			print("G")
-			#road_node.current_beat.queue_free()
 			road_node.increment_score(2)
 			road_node.current_beat.destroy(2)
 		elif road_node.ok_l:
 			print("O")
-			#road_node.current_beat.queue_free()
 			road_node.increment_score(1)
 			road_node.current_beat.destroy(1)
 		if !road_node.perfect_l and !road_node.good_l and !road_node.ok_l:

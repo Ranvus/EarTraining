@@ -2,16 +2,6 @@ extends Control
 
 @onready var main_menu = get_node_or_null("../MainMenuContainer")
 
-func _ready():
-	print(get_parent())
-
-func _on_button_pressed():
-	if main_menu:
-		main_menu.set_visible(true)
-		self.hide()
-	else:
-		self.hide()
-		get_tree().paused = false
 
 func _input(event):
 	if get_parent().name != "Menu":
@@ -22,3 +12,13 @@ func _input(event):
 			else:
 				self.hide()
 				get_tree().paused = false
+
+
+func _on_back_btn_pressed():
+	if main_menu:
+		main_menu.set_visible(true)
+		self.hide()
+	else:
+		self.hide()
+		get_tree().paused = false
+		

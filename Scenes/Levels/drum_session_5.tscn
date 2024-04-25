@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cltmd060wny4o" path="res://Scenes/Levels/tile_map.tscn" id="1_ruaqp"]
 [ext_resource type="Script" path="res://Scripts/Levels/drum_session.gd" id="1_vobjd"]
-[ext_resource type="PackedScene" uid="uid://dwtp1ogpi4d2d" path="res://Scenes/road.tscn" id="2_uw45d"]
+[ext_resource type="PackedScene" uid="uid://dwtp1ogpi4d2d" path="res://Scenes/DrumSession/road.tscn" id="2_uw45d"]
 [ext_resource type="PackedScene" uid="uid://0g4cxqhyjfww" path="res://Scenes/player.tscn" id="3_rwen7"]
-[ext_resource type="PackedScene" uid="uid://c4bl3bke3sked" path="res://Scenes/drum_teacher.tscn" id="4_3b7el"]
+[ext_resource type="PackedScene" uid="uid://c4bl3bke3sked" path="res://Scenes/DrumSession/drum_teacher.tscn" id="4_3b7el"]
 [ext_resource type="PackedScene" uid="uid://dwn72018ouwf3" path="res://Scenes/UI/drum_ui.tscn" id="5_5026a"]
 [ext_resource type="PackedScene" uid="uid://bhxkpn2he55t1" path="res://Scenes/save_system.tscn" id="6_8gvdd"]
 [ext_resource type="PackedScene" uid="uid://bsmhycxtja4hj" path="res://Scenes/UI/session_end.tscn" id="7_mdi01"]

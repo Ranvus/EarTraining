@@ -40,7 +40,6 @@ func _ready():
 	save_system_node.load_data(save_system_node.SAVE_DIR + save_system_node.SAVE_FILE_NAME)
 
 func _process(_delta):
-	#print(get_tree().get_nodes_in_group("beats").size())
 	if get_tree().get_nodes_in_group("beats").size() == 0:
 		save_system_node.save_data(save_system_node.SAVE_DIR + save_system_node.SAVE_FILE_NAME)
 		session_end_node.show()
@@ -50,10 +49,8 @@ func calc_params():
 	bar_len = 256
 	spb = 60 / float(bpm)
 	speed = bar_len / float(4 * spb)
-	#beat_scale = bar_len / 4
 	beat_scale = 0.16
 	start_pos_in_sec = (float(map.start_pos)/400.0) * spb
-	#start_pos_in_sec = 19.2
 
 func load_map():
 	var file = FileAccess.open(map_file, FileAccess.READ)

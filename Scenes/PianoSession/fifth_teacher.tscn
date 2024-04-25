@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=3 uid="uid://d1khsoxcb418p"]
 
-[ext_resource type="Script" path="res://Scripts/fifth_teacher.gd" id="1_11wcu"]
+[ext_resource type="Script" path="res://Scripts/PianoSession/fifth_teacher.gd" id="1_11wcu"]
 [ext_resource type="AudioStream" uid="uid://dql7nm2jxn4nr" path="res://Audio/Notes/C3_piano.wav" id="2_dsodk"]
 [ext_resource type="PackedScene" uid="uid://bu25o5py640l8" path="res://Scenes/PianoSession/note.tscn" id="2_rq7no"]
 [ext_resource type="AudioStream" uid="uid://2yqddtt03sko" path="res://Audio/Notes/Db3_piano.wav" id="3_5ds8m"]

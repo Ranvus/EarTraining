@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgcncg7lxmrjj"]
 
-[ext_resource type="Script" path="res://Scripts/beat.gd" id="1_2jrbd"]
+[ext_resource type="Script" path="res://Scripts/DrumSession/beat.gd" id="1_2jrbd"]
 [ext_resource type="Texture2D" uid="uid://dvmi4tiywhhb8" path="res://Sprites/Drum Session/Drum Road/Beat.png" id="1_ucfey"]
 [ext_resource type="FontFile" uid="uid://bqtl52xy2arj6" path="res://Fonts/superstar_memesbruh03.ttf" id="3_jmrc5"]
 

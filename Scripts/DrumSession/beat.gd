@@ -29,14 +29,14 @@ func destroy(score):
 	timer_node.start()
 	hit = true
 	if score == 3:
-		label_node.text = "PERFECT"
-		label_node.modulate = Color("f6d6bd")
+		label_node.text = "ОТЛИЧНО"
+		label_node.modulate = Color("f0a5a5")
 	elif score == 2:
-		label_node.text = "GOOD"
-		label_node.modulate = Color("c3a38a")
+		label_node.text = "ХОРОШО"
+		label_node.modulate = Color("ca9494")
 	elif score == 1:
-		label_node.text = "OKAY"
-		label_node.modulate = Color("997577")
+		label_node.text = "НЕПЛОХО"
+		label_node.modulate = Color("9e7e7e")
 
 
 func _on_timer_timeout():

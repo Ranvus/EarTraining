@@ -42,13 +42,13 @@ scale = Vector2(3, 3)
 texture = ExtResource("8_p261b")
 
 [node name="Label8" type="Label" parent="KeyTutorial"]
-offset_left = -41.0
-offset_top = 10.3333
-offset_right = -13.0
-offset_bottom = 22.3333
+offset_left = -56.6667
+offset_top = 10.0
+offset_right = -9.66667
+offset_bottom = 26.0
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_m8tf6")
-text = "4th"
+text = "кварта"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label9" type="Label" parent="KeyTutorial"]
@@ -58,7 +58,7 @@ offset_right = -7.33334
 offset_bottom = 6.66667
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_m8tf6")
-text = "Tritone"
+text = "тритон"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label10" type="Label" parent="KeyTutorial"]
@@ -68,7 +68,7 @@ offset_right = 55.6667
 offset_bottom = 21.6667
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_m8tf6")
-text = "5th"
+text = "квинта"
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

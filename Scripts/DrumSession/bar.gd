@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var beat_tscn := preload("res://Scenes/beat.tscn")
+@onready var beat_tscn := preload("res://Scenes/DrumSession/beat.tscn")
 
 var multiplier = 0
 var pos : Vector2

@@ -2,8 +2,7 @@ extends Node2D
 
 signal drumScoreChanged
 
-@onready var bar_tscn := preload("res://Scenes/bar.tscn")
-@onready var player_tscn := preload("res://Scenes/player.tscn")
+@onready var bar_tscn := preload("res://Scenes/DrumSession/bar.tscn")
 
 @onready var bars_spawner_node = get_node_or_null("BarsSpawner")
 @onready var drumcombo_node = get_node_or_null("../DrumUI/DrumCombo")
@@ -113,5 +112,3 @@ func _on_end_area_entered(area):
 func _on_end_bar_area_entered(area):
 	if area.name == "BarCollision" or area.name == "Area2D":
 		area.get_parent().get_child(0).hide()
-
-		

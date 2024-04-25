@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c4bl3bke3sked"]
 
-[ext_resource type="Script" path="res://Scripts/DrumTeacher.gd" id="1_3xorx"]
+[ext_resource type="Script" path="res://Scripts/DrumSession/DrumTeacher.gd" id="1_3xorx"]
 [ext_resource type="Texture2D" uid="uid://cg21dphaksqsf" path="res://Sprites/Drum Session/Drum Teacher/DrumTeacher_idle.png" id="2_3qus7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2rtlc"]

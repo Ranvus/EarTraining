@@ -66,13 +66,15 @@ position = Vector2(590, 432)
 modulate = Color(1, 1, 1, 0.65098)
 
 [node name="Label" type="Label" parent="Pointers"]
-offset_left = 742.0
-offset_top = 51.0
-offset_right = 1130.0
-offset_bottom = 102.0
+offset_left = 725.0
+offset_top = 19.0
+offset_right = 1113.0
+offset_bottom = 178.0
 theme_override_fonts/font = ExtResource("8_yvtwe")
 theme_override_font_sizes/font_size = 50
-text = "Тренировка слуха"
+text = "Тренировка 
+относительного 
+слуха"
 
 [node name="Label2" type="Label" parent="Pointers"]
 offset_left = 34.0
@@ -122,7 +124,8 @@ offset_right = 1915.0
 offset_bottom = 83.0
 theme = ExtResource("11_ynwkw")
 theme_override_font_sizes/font_size = 32
-text = "баллы за тренировку слуха:"
+text = "баллы за тренировку 
+относительного слуха:"
 
 [node name="DrumScore" type="Label" parent="Score"]
 layout_mode = 0

@@ -116,15 +116,10 @@ func right_answer():
 	if interval_answer == player_node.answer:
 		piano1_score += 1
 		pianoUnisonScoreChanged.emit()
-		for i in get_tree().get_nodes_in_group("notes"):
-			i.queue_free()
+		notes_destroy()
 	else:
-		#player_node.cur_health -= 1
-		#player_node.healthChanged.emit(player_node.cur_health)
 		player_node.penalty()
 		notes_destroy()
-		#for i in get_tree().get_nodes_in_group("notes"):
-			#i.queue_free()
 
 func notes_destroy():
 	for i in get_tree().get_nodes_in_group("notes"):

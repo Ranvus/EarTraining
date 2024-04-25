@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bu25o5py640l8"]
 
-[ext_resource type="Script" path="res://Scripts/note.gd" id="1_es48r"]
+[ext_resource type="Script" path="res://Scripts/PianoSession/note.gd" id="1_es48r"]
 [ext_resource type="Texture2D" uid="uid://c6drc7ubahci2" path="res://Sprites/Piano Session/PianoNote.png" id="2_ieuc2"]
 [ext_resource type="AudioStream" uid="uid://bg73wt0cyg2xo" path="res://Audio/Notes/C4_piano.wav" id="3_pvghl"]
 [ext_resource type="AudioStream" uid="uid://dt5ypjjuvlcjk" path="res://Audio/Notes/D4_piano.wav" id="4_f7usy"]
