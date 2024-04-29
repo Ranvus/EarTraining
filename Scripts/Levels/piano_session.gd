@@ -5,6 +5,9 @@ extends Node
 @onready var teacher1_node = get_node_or_null("SecondThirdTeacher")
 @onready var teacher2_node = get_node_or_null("FifthTeacher")
 @onready var teacher3_node = get_node_or_null("OctaveTeacher")
+@onready var teacher4_node = get_node_or_null("UnisonIntervalTeacher")
+@onready var teacher5_node = get_node_or_null("FifthIntervalTeacher")
+@onready var teacher6_node = get_node_or_null("OctaveIntervalTeacher")
 @onready var save_system_node = get_node_or_null("SaveSystem")
 
 const NOTE_SPEED_MULTIPLIER : float = 1.02
@@ -37,6 +40,18 @@ func new_game():
 		teacher = teacher3_node
 		teacher.piano3_score = 0
 		teacher.pianoOctaveScoreChanged.connect(increase_speed)
+	elif teacher4_node:
+		teacher = teacher4_node
+		teacher.piano4_score = 0
+		teacher.pianoUnisonIntervalScoreChanged.connect(increase_speed)
+	elif teacher5_node:
+		teacher = teacher5_node
+		teacher.piano5_score = 0
+		teacher.pianoFifthIntervalScoreChanged.connect(increase_speed)
+	elif teacher6_node:
+		teacher = teacher6_node
+		teacher.piano6_score = 0
+		teacher.pianoOctaveIntervalScoreChanged.connect(increase_speed)
 	player_node.teacher.can_play = true
 	game_over_node.hide()
 	player_node.reset()

@@ -18,10 +18,17 @@ var drum_combo = 0
 var piano1_score = 0
 var piano2_score = 0
 var piano3_score = 0
+var piano4_score = 0
+var piano5_score = 0
+var piano6_score = 0
 var max_piano1_score : int
 var max_piano2_score : int
 var max_piano3_score : int
+var max_piano4_score : int
+var max_piano5_score : int
+var max_piano6_score : int
 var total_piano_score : int
+var total_piano_interval_score : int
 
 var total_score : int
 
@@ -41,6 +48,15 @@ func _process(_delta):
 	if piano3_score > max_piano3_score:
 		max_piano3_score = piano3_score
 		
+	if piano4_score > max_piano4_score:
+		max_piano4_score = piano4_score
+		
+	if piano5_score > max_piano5_score:
+		max_piano5_score = piano5_score
+		
+	if piano6_score > max_piano6_score:
+		max_piano6_score = piano6_score
+		
 	if drum1_score > max_drum1_score:
 		max_drum1_score = drum1_score
 		
@@ -58,8 +74,9 @@ func _process(_delta):
 		
 	total_drum_score = max_drum1_score + max_drum2_score + max_drum3_score + max_drum4_score + max_drum5_score
 	total_piano_score = max_piano1_score + max_piano2_score + max_piano3_score
+	total_piano_interval_score = max_piano4_score + max_piano5_score + max_piano6_score
 	
-	total_score = total_drum_score + total_piano_score
+	total_score = total_drum_score + total_piano_score + total_piano_interval_score
 
 func set_score(new):
 	score = new

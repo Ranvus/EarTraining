@@ -5,6 +5,9 @@ signal healthChanged
 @onready var teacher1_node = get_node_or_null("../SecondThirdTeacher")
 @onready var teacher2_node = get_node_or_null("../FifthTeacher")
 @onready var teacher3_node = get_node_or_null("../OctaveTeacher")
+@onready var teacher4_node = get_node_or_null("../UnisonIntervalTeacher")
+@onready var teacher5_node = get_node_or_null("../FifthIntervalTeacher")
+@onready var teacher6_node = get_node_or_null("../OctaveIntervalTeacher")
 @onready var road_node = get_node_or_null("../Road")
 @onready var animation_player_node = get_node_or_null("AnimationPlayer")
 @onready var sprite_node = get_node_or_null("Sprite2D")
@@ -44,6 +47,12 @@ func _ready():
 		teacher = teacher2_node
 	elif teacher3_node:
 		teacher = teacher3_node
+	elif teacher4_node:
+		teacher = teacher4_node
+	elif teacher5_node:
+		teacher = teacher5_node
+	elif teacher6_node:
+		teacher = teacher6_node
 		
 	reset()
 	
@@ -58,39 +67,39 @@ func dir_input():
 
 func note_input():
 	if Input.is_action_just_pressed("space"):
-		if teacher.name == "SecondThirdTeacher":
+		if teacher.name == "SecondThirdTeacher" or teacher.name == "UnisonIntervalTeacher":
 			answer = "Unison"
-		elif teacher.name == "OctaveTeacher":
+		elif teacher.name == "OctaveTeacher" or teacher.name == "OctaveIntervalTeacher":
 			answer = "Octave"
 		teacher.right_answer()
 	elif Input.is_action_just_pressed("left"):
-		if teacher.name == "SecondThirdTeacher":
+		if teacher.name == "SecondThirdTeacher" or teacher.name == "UnisonIntervalTeacher":
 			answer = "MinSecond"
-		elif teacher.name == "FifthTeacher":
+		elif teacher.name == "FifthTeacher" or teacher.name == "FifthIntervalTeacher":
 			answer = "Fourth"
-		elif teacher.name == "OctaveTeacher":
+		elif teacher.name == "OctaveTeacher" or teacher.name == "OctaveIntervalTeacher":
 			answer = "MinSixth"
 		teacher.right_answer()
 	elif Input.is_action_just_pressed("right"):
-		if teacher.name == "SecondThirdTeacher":
+		if teacher.name == "SecondThirdTeacher" or teacher.name == "UnisonIntervalTeacher":
 			answer = "MajSecond"
-		elif teacher.name == "FifthTeacher":
+		elif teacher.name == "FifthTeacher" or teacher.name == "FifthIntervalTeacher":
 			answer = "Fifth"
-		elif teacher.name == "OctaveTeacher":
+		elif teacher.name == "OctaveTeacher" or teacher.name == "OctaveIntervalTeacher":
 			answer = "MajSixth"
 		teacher.right_answer()
 	elif Input.is_action_just_pressed("up"):
-		if teacher.name == "SecondThirdTeacher":
+		if teacher.name == "SecondThirdTeacher" or teacher.name == "UnisonIntervalTeacher":
 			answer = "MinThird"
-		elif teacher.name == "FifthTeacher":
+		elif teacher.name == "FifthTeacher" or teacher.name == "FifthIntervalTeacher":
 			answer = "Tritone"
-		elif teacher.name == "OctaveTeacher":
+		elif teacher.name == "OctaveTeacher" or teacher.name == "OctaveIntervalTeacher":
 			answer = "MinSeventh"
 		teacher.right_answer()
 	elif Input.is_action_just_pressed("down"):
-		if teacher.name == "SecondThirdTeacher":
+		if teacher.name == "SecondThirdTeacher" or teacher.name == "UnisonIntervalTeacher":
 			answer = "MajThird"
-		elif teacher.name == "OctaveTeacher":
+		elif teacher.name == "OctaveTeacher" or teacher.name == "OctaveIntervalTeacher":
 			answer = "MajSeventh"
 		teacher.right_answer()
 		
@@ -135,9 +144,9 @@ func _physics_process(_delta):
 		dir_input()
 		move_and_slide()
 	elif is_piano:
-		if teacher.get_tree().get_nodes_in_group("notes").size() == 2:
-			note_input()
-			die()
+		#if teacher.get_tree().get_nodes_in_group("notes").size() == 2:
+		note_input()
+		die()
 	elif is_drum:
 		beat_input()
 		
@@ -154,6 +163,7 @@ func _physics_process(_delta):
 func penalty():
 	cur_health -= 1
 	healthChanged.emit(cur_health)
+	print(cur_health)
 
 func die():
 	if cur_health <= 0:

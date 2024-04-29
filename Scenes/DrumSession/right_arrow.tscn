@@ -1,7 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://y8r8yudkouv0"]
+[gd_scene load_steps=11 format=3 uid="uid://y8r8yudkouv0"]
 
 [ext_resource type="Script" path="res://Scripts/DrumSession/right_arrow.gd" id="1_nmn44"]
 [ext_resource type="Texture2D" uid="uid://cseudw168xcb5" path="res://Sprites/Drum Session/Drum Road/Snare.png" id="2_uj0u2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up8nb"]
+atlas = ExtResource("2_uj0u2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aneer"]
+atlas = ExtResource("2_uj0u2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0au4"]
+atlas = ExtResource("2_uj0u2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2sqk"]
+atlas = ExtResource("2_uj0u2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_po2cj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up8nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aneer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0au4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2sqk")
+}],
+"loop": false,
+"name": &"SnarePressed",
+"speed": 14.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jijwe"]
 size = Vector2(4, 18)
@@ -16,9 +52,15 @@ size = Vector2(20, 18)
 script = ExtResource("1_nmn44")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_uj0u2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_po2cj")
+animation = &"SnarePressed"
 
 [node name="Perfect" type="Area2D" parent="."]
 position = Vector2(1, -1)

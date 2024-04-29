@@ -112,11 +112,6 @@ scale = Vector2(2, 2)
 script = ExtResource("1_rp2tr")
 note_tscn = ExtResource("2_yusn4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("3_hv3xk")
-hframes = 8
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h83uy")
 animation = &"Idle"

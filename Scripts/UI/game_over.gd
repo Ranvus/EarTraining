@@ -10,7 +10,7 @@ func _ready():
 	session_number = int(get_parent().name.substr(12, 1))
 	print(session_number)
 	
-	if session_number < 3:
+	if session_number < 6:
 		next_btn_node.show()
 	else:
 		next_btn_node.hide()

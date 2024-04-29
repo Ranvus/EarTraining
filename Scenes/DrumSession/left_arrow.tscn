@@ -1,8 +1,44 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6a11no5re6pj"]
+[gd_scene load_steps=12 format=3 uid="uid://c6a11no5re6pj"]
 
 [ext_resource type="Script" path="res://Scripts/DrumSession/left_arrow.gd" id="1_wee58"]
 [ext_resource type="Texture2D" uid="uid://cqvt0nbbrvnqd" path="res://Sprites/Drum Session/Drum Road/Kick.png" id="2_asr4a"]
 [ext_resource type="PackedScene" uid="uid://bgcncg7lxmrjj" path="res://Scenes/DrumSession/beat.tscn" id="3_ymi20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k6ls"]
+atlas = ExtResource("2_asr4a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gjrn"]
+atlas = ExtResource("2_asr4a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myo0g"]
+atlas = ExtResource("2_asr4a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5co24"]
+atlas = ExtResource("2_asr4a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8j888"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k6ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gjrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myo0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5co24")
+}],
+"loop": false,
+"name": &"KickPressed",
+"speed": 14.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4udk8"]
 size = Vector2(4, 18)
@@ -17,8 +53,15 @@ size = Vector2(20, 18)
 script = ExtResource("1_wee58")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -3)
 texture = ExtResource("2_asr4a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8j888")
+animation = &"KickPressed"
+frame = 3
+frame_progress = 1.0
 
 [node name="Perfect" type="Area2D" parent="."]
 position = Vector2(1, -1)

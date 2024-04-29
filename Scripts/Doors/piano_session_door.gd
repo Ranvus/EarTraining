@@ -27,4 +27,3 @@ func _ready():
 
 func _on_interact():
 	get_tree().call_deferred("change_scene_to_file", session_path)
-

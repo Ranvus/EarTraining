@@ -60,11 +60,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 bus_name = "Sounds"
 
-[node name="BackBtn" type="Button" parent="VBoxContainer/OptionsVBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/OptionsVBox"]
+layout_mode = 2
+
+[node name="BackBtn" type="Button" parent="VBoxContainer/OptionsVBox/HBoxContainer"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Назад"
 
-[connection signal="pressed" from="VBoxContainer/OptionsVBox/BackBtn" to="." method="_on_back_btn_pressed"]
+[node name="ExitBtn" type="Button" parent="VBoxContainer/OptionsVBox/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Выйти в холл"
+
+[connection signal="pressed" from="VBoxContainer/OptionsVBox/HBoxContainer/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsVBox/HBoxContainer/ExitBtn" to="." method="_on_exit_btn_pressed"]

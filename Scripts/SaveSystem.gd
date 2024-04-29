@@ -22,6 +22,9 @@ func save_data(path : String):
 			"max_piano1_score" : Global.max_piano1_score,
 			"max_piano2_score" : Global.max_piano2_score,
 			"max_piano3_score" : Global.max_piano3_score,
+			"max_piano4_score" : Global.max_piano4_score,
+			"max_piano5_score" : Global.max_piano5_score,
+			"max_piano6_score" : Global.max_piano6_score,
 		},
 		"drum_score_data" : {
 			"max_drum1_score" : Global.max_drum1_score,
@@ -33,6 +36,7 @@ func save_data(path : String):
 		"total_score_data" : {
 			"total_drum_score" : Global.total_drum_score,
 			"total_piano_score" : Global.total_piano_score,
+			"total_piano_interval_score" : Global.total_piano_interval_score,
 			"total_score" : Global.total_score,
 		}
 	}
@@ -60,6 +64,9 @@ func load_data(path : String):
 		Global.max_piano1_score = data.piano_score_data.max_piano1_score
 		Global.max_piano2_score = data.piano_score_data.max_piano2_score
 		Global.max_piano3_score = data.piano_score_data.max_piano3_score
+		Global.max_piano4_score = data.piano_score_data.max_piano4_score
+		Global.max_piano5_score = data.piano_score_data.max_piano5_score
+		Global.max_piano6_score = data.piano_score_data.max_piano6_score
 		
 		Global.max_drum1_score = data.drum_score_data.max_drum1_score
 		Global.max_drum2_score = data.drum_score_data.max_drum2_score
@@ -69,6 +76,7 @@ func load_data(path : String):
 		
 		Global.total_drum_score = data.total_score_data.total_drum_score
 		Global.total_piano_score = data.total_score_data.total_piano_score
+		Global.total_piano_interval_score = data.total_score_data.total_piano_interval_score
 		Global.total_score = data.total_score_data.total_score
 	else:
 		printerr("Cannot open non-existent file at %s!" % [path])
