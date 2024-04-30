@@ -36,7 +36,7 @@ func destroy(score):
 		label_node.modulate = Color("ca9494")
 	elif score == 1:
 		label_node.text = "НЕПЛОХО"
-		label_node.modulate = Color("9e7e7e")
+		label_node.modulate = Color("ba8b8b")
 
 
 func _on_timer_timeout():

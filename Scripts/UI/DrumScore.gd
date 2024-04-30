@@ -20,3 +20,13 @@ func update():
 		text = str(Global.drum4_score)
 	elif "5" in session_node.name:
 		text = str(Global.drum5_score)
+	elif "6" in session_node.name:
+		text = str(Global.drum6_score)
+	elif "7" in session_node.name:
+		text = str(Global.drum7_score)
+	elif "8" in session_node.name:
+		text = str(Global.drum8_score)
+	elif "9" in session_node.name:
+		text = str(Global.drum9_score)
+	elif "10" in session_node.name:
+		text = str(Global.drum10_score)

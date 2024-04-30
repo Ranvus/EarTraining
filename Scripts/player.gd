@@ -144,7 +144,6 @@ func _physics_process(_delta):
 		dir_input()
 		move_and_slide()
 	elif is_piano:
-		#if teacher.get_tree().get_nodes_in_group("notes").size() == 2:
 		note_input()
 		die()
 	elif is_drum:

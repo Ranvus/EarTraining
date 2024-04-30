@@ -8,10 +8,10 @@ var drum_session : String
 var session_number : int
 
 func _ready():
-	session_number = int(get_parent().name.substr(11, 1))
+	session_number = int(get_parent().name.substr(11, 2))
 	drum_session = "res://Scenes/Levels/drum_session_" + str(session_number) + ".tscn"
 	
-	if session_number < 5:
+	if session_number < 10:
 		next_btn_node.show()
 	else:
 		next_btn_node.hide()

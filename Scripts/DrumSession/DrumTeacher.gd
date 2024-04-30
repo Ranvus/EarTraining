@@ -10,6 +10,8 @@ var start_pos_in_sec
 
 func _ready():
 	animated_sprite_node.play()
+	var session_number = int(get_parent().name.substr(11, 2))
+	print(session_number)
 
 func setup(game):
 	audio_player_node.stream = game.audio

@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var interaction_area_node : InteractionArea = get_node_or_null("InteractionArea")
 @onready var label_node = get_node_or_null("Label")
-@onready var save_system_node = get_node_or_null("../../SaveSystem")
+@onready var save_system_node = get_node_or_null("../../../SaveSystem")
 
 const FILE_BEGIN = "res://Scenes/Levels/drum_session_"
 

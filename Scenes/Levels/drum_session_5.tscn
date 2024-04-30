@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dn7mq0txhot7s"]
+[gd_scene load_steps=11 format=3 uid="uid://dn7mq0txhot7s"]
 
 [ext_resource type="PackedScene" uid="uid://cltmd060wny4o" path="res://Scenes/Levels/tile_map.tscn" id="1_ruaqp"]
 [ext_resource type="Script" path="res://Scripts/Levels/drum_session.gd" id="1_vobjd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bhxkpn2he55t1" path="res://Scenes/save_system.tscn" id="6_8gvdd"]
 [ext_resource type="PackedScene" uid="uid://bsmhycxtja4hj" path="res://Scenes/UI/session_end.tscn" id="7_mdi01"]
 [ext_resource type="PackedScene" uid="uid://cfxc8wlc0l4aj" path="res://Scenes/UI/option_menu.tscn" id="9_50dgo"]
+[ext_resource type="Texture2D" uid="uid://fkj1q6gn3kaj" path="res://Sprites/Drum Session/Drum Road/DrumKeyTutorial.png" id="10_l2ws5"]
 
 [node name="DrumSession5" type="Node"]
 script = ExtResource("1_vobjd")
@@ -41,3 +42,11 @@ visible = false
 
 [node name="OptionContainer" parent="CanvasLayer" instance=ExtResource("9_50dgo")]
 visible = false
+
+[node name="DrumTutorial" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="DrumTutorial"]
+modulate = Color(1, 1, 1, 0.65098)
+position = Vector2(577, 500)
+scale = Vector2(3, 3)
+texture = ExtResource("10_l2ws5")

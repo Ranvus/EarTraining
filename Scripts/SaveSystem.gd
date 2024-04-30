@@ -32,6 +32,11 @@ func save_data(path : String):
 			"max_drum3_score" : Global.max_drum3_score,
 			"max_drum4_score" : Global.max_drum4_score,
 			"max_drum5_score" : Global.max_drum5_score,
+			"max_drum6_score" : Global.max_drum6_score,
+			"max_drum7_score" : Global.max_drum7_score,
+			"max_drum8_score" : Global.max_drum8_score,
+			"max_drum9_score" : Global.max_drum9_score,
+			"max_drum10_score" : Global.max_drum10_score,
 		},
 		"total_score_data" : {
 			"total_drum_score" : Global.total_drum_score,
@@ -73,6 +78,11 @@ func load_data(path : String):
 		Global.max_drum3_score = data.drum_score_data.max_drum3_score
 		Global.max_drum4_score = data.drum_score_data.max_drum4_score
 		Global.max_drum5_score = data.drum_score_data.max_drum5_score
+		Global.max_drum6_score = data.drum_score_data.max_drum6_score
+		Global.max_drum7_score = data.drum_score_data.max_drum7_score
+		Global.max_drum8_score = data.drum_score_data.max_drum8_score
+		Global.max_drum9_score = data.drum_score_data.max_drum9_score
+		Global.max_drum10_score = data.drum_score_data.max_drum10_score
 		
 		Global.total_drum_score = data.total_score_data.total_drum_score
 		Global.total_piano_score = data.total_score_data.total_piano_score

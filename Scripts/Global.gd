@@ -7,11 +7,21 @@ var drum2_score = 0
 var drum3_score = 0
 var drum4_score = 0
 var drum5_score = 0
+var drum6_score = 0
+var drum7_score = 0
+var drum8_score = 0
+var drum9_score = 0
+var drum10_score = 0
 var max_drum1_score: int
 var max_drum2_score: int
 var max_drum3_score: int
 var max_drum4_score: int
 var max_drum5_score: int
+var max_drum6_score: int
+var max_drum7_score: int
+var max_drum8_score: int
+var max_drum9_score: int
+var max_drum10_score: int
 var total_drum_score: int
 var drum_combo = 0
 
@@ -71,8 +81,23 @@ func _process(_delta):
 		
 	if drum5_score > max_drum5_score:
 		max_drum5_score = drum5_score
+	
+	if drum6_score > max_drum6_score:
+		max_drum6_score = drum6_score
 		
-	total_drum_score = max_drum1_score + max_drum2_score + max_drum3_score + max_drum4_score + max_drum5_score
+	if drum7_score > max_drum7_score:
+		max_drum7_score = drum7_score
+		
+	if drum8_score > max_drum8_score:
+		max_drum8_score = drum8_score
+		
+	if drum9_score > max_drum9_score:
+		max_drum9_score = drum9_score
+		
+	if drum10_score > max_drum10_score:
+		max_drum10_score = drum10_score
+		
+	total_drum_score = max_drum1_score + max_drum2_score + max_drum3_score + max_drum4_score + max_drum5_score + max_drum6_score + max_drum7_score + max_drum8_score + max_drum9_score + max_drum10_score
 	total_piano_score = max_piano1_score + max_piano2_score + max_piano3_score
 	total_piano_interval_score = max_piano4_score + max_piano5_score + max_piano6_score
 	

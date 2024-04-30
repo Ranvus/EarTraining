@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0x5aevrcvorl"]
+[gd_scene load_steps=12 format=3 uid="uid://b0x5aevrcvorl"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/piano_session.gd" id="1_aj2fo"]
 [ext_resource type="PackedScene" uid="uid://cltmd060wny4o" path="res://Scenes/Levels/tile_map.tscn" id="1_k1eu0"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bqtl52xy2arj6" path="res://Fonts/superstar_memesbruh03.ttf" id="7_0ijgr"]
 [ext_resource type="PackedScene" uid="uid://cfxc8wlc0l4aj" path="res://Scenes/UI/option_menu.tscn" id="8_giqpe"]
 [ext_resource type="PackedScene" uid="uid://bo0yio3gynpfk" path="res://Scenes/PianoSession/unison_interval_teacher.tscn" id="9_ejdu6"]
+[ext_resource type="Theme" uid="uid://djik2vt5o72kb" path="res://Themes/default_theme.tres" id="11_io6tk"]
 
 [node name="PianoSession4" type="Node"]
 script = ExtResource("1_aj2fo")
@@ -87,3 +88,40 @@ text = "б2"
 
 [node name="OptionContainer" parent="CanvasLayer" instance=ExtResource("8_giqpe")]
 visible = false
+
+[node name="PianoTutorial" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="PianoTutorial"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -190.0
+offset_right = 308.0
+grow_vertical = 0
+theme = ExtResource("11_io6tk")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PianoTutorial/MarginContainer"]
+modulate = Color(1, 1, 1, 0.65098)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PianoTutorial/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "М2 - малая секунда"
+
+[node name="Label2" type="Label" parent="PianoTutorial/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "б2 - большая секунда"
+
+[node name="Label3" type="Label" parent="PianoTutorial/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "м3 - малая терция"
+
+[node name="Label4" type="Label" parent="PianoTutorial/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "б3 - большая терция"

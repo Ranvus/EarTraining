@@ -52,6 +52,16 @@ func _process(delta):
 		Global.drum4_score = drum_score
 	elif "5" in get_parent().name:
 		Global.drum5_score = drum_score
+	elif "6" in get_parent().name:
+		Global.drum6_score = drum_score
+	elif "7" in get_parent().name:
+		Global.drum7_score = drum_score
+	elif "8" in get_parent().name:
+		Global.drum8_score = drum_score
+	elif "9" in get_parent().name:
+		Global.drum9_score = drum_score
+	elif "10" in get_parent().name:
+		Global.drum10_score = drum_score
 	Global.drum_combo = drum_combo
 	
 	bars_spawner_node.translate(speed*delta)
