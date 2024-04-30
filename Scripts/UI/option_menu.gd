@@ -1,6 +1,6 @@
 extends Control
 
-@onready var main_menu = get_node_or_null("../MainMenuContainer")
+@onready var main_menu_node = get_node_or_null("../MainMenuContainer")
 @onready var teacher1_node = get_node_or_null("../../SecondThirdTeacher")
 @onready var teacher2_node = get_node_or_null("../../FifthTeacher")
 @onready var teacher3_node = get_node_or_null("../../OctaveTeacher")
@@ -8,6 +8,8 @@ extends Control
 @onready var teacher5_node = get_node_or_null("../../FifthIntervalTeacher")
 @onready var teacher6_node = get_node_or_null("../../OctaveIntervalTeacher")
 @onready var player_node = get_node_or_null("../../Player")
+@onready var exit_btn_node = get_node_or_null("VBoxContainer/OptionsVBox/HBoxContainer/ExitBtn")
+
 
 var teacher
 
@@ -24,9 +26,10 @@ func _ready():
 		teacher = teacher5_node
 	elif teacher6_node:
 		teacher = teacher6_node
-	
-	if main_menu:
-		$VBoxContainer/OptionsVBox/HBoxContainer/ExitBtn.hide()
+		
+	if main_menu_node or get_parent().get_parent().name == "Main":
+		exit_btn_node.modulate = Color(255, 255, 255, 0)
+		exit_btn_node.disabled = true
 
 func _input(event):
 	if get_parent().name != "Menu":
@@ -40,8 +43,8 @@ func _input(event):
 
 
 func _on_back_btn_pressed():
-	if main_menu:
-		main_menu.set_visible(true)
+	if main_menu_node:
+		main_menu_node.set_visible(true)
 		self.hide()
 	else:
 		self.hide()

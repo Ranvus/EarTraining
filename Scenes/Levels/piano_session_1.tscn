@@ -82,11 +82,6 @@ scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("9_gyb1m")
 text = "б2"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="OptionContainer" parent="CanvasLayer" instance=ExtResource("10_bp1kn")]
-visible = false
-
 [node name="PianoTutorial" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="PianoTutorial"]
@@ -123,3 +118,8 @@ text = "м3 - малая терция"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "б3 - большая терция"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OptionContainer" parent="CanvasLayer" instance=ExtResource("10_bp1kn")]
+visible = false

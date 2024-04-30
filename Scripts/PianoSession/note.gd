@@ -6,8 +6,7 @@ var speed : float
 var direction : Vector2
 
 func _ready():
-	#speed = session.note_speed
-	speed = 100
+	speed = session.note_speed
 
 func _process(delta):
 	position += speed * direction * delta

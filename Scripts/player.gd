@@ -106,33 +106,24 @@ func note_input():
 func beat_input():
 	if Input.is_action_just_pressed("left"):
 		if road_node.perfect_l:
-			print("P")
 			road_node.increment_score(3)
 			road_node.current_beat.destroy(3)
 		elif road_node.good_l:
-			print("G")
 			road_node.increment_score(2)
 			road_node.current_beat.destroy(2)
 		elif road_node.ok_l:
-			print("O")
 			road_node.increment_score(1)
 			road_node.current_beat.destroy(1)
 		if !road_node.perfect_l and !road_node.good_l and !road_node.ok_l:
 			road_node.increment_score(0)
 	if Input.is_action_just_pressed("right"):
 		if road_node.perfect_r:
-			print("P")
-			#road_node.current_beat.queue_free()
 			road_node.increment_score(3)
 			road_node.current_beat.destroy(3)
 		elif road_node.good_r:
-			print("G")
-			#road_node.current_beat.queue_free()
 			road_node.increment_score(2)
 			road_node.current_beat.destroy(2)
 		elif road_node.ok_r:
-			print("O")
-			#road_node.current_beat.queue_free()
 			road_node.increment_score(1)
 			road_node.current_beat.destroy(1)
 		if !road_node.perfect_r and !road_node.good_r and !road_node.ok_r:
@@ -162,7 +153,6 @@ func _physics_process(_delta):
 func penalty():
 	cur_health -= 1
 	healthChanged.emit(cur_health)
-	print(cur_health)
 
 func die():
 	if cur_health <= 0:
