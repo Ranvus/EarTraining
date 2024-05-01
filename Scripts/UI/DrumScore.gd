@@ -10,23 +10,23 @@ func _process(_delta):
 	update()
 
 func update():
-	if "1" in session_node.name:
+	if session_node.name.substr(11, 2) == "1":
 		text = str(Global.drum1_score)
-	elif "2" in session_node.name:
+	elif session_node.name.substr(11, 2) == "2":
 		text = str(Global.drum2_score)
-	elif "3" in session_node.name:
+	elif session_node.name.substr(11, 2) == "3":
 		text = str(Global.drum3_score)
-	elif "4" in session_node.name:
+	elif session_node.name.substr(11, 2) == "4":
 		text = str(Global.drum4_score)
-	elif "5" in session_node.name:
+	elif session_node.name.substr(11, 2) == "5":
 		text = str(Global.drum5_score)
-	elif "6" in session_node.name:
+	elif session_node.name.substr(11, 2) == "6":
 		text = str(Global.drum6_score)
-	elif "7" in session_node.name:
+	elif session_node.name.substr(11, 2) == "7":
 		text = str(Global.drum7_score)
-	elif "8" in session_node.name:
+	elif session_node.name.substr(11, 2) == "8":
 		text = str(Global.drum8_score)
-	elif "9" in session_node.name:
+	elif session_node.name.substr(11, 2) == "9":
 		text = str(Global.drum9_score)
-	elif "10" in session_node.name:
+	elif  session_node.name.substr(11, 2) == "10":
 		text = str(Global.drum10_score)

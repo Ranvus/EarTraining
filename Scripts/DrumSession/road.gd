@@ -40,27 +40,30 @@ func setup(game):
 	cur_bar_index = 0
 	tracks_data = game.map.tracks
 	add_bars()
-		
+
+func _ready():
+	print(get_parent().name.substr(11, 2))
+
 func _process(delta):
-	if "1" in get_parent().name:
+	if get_parent().name.substr(11, 2) == "1":
 		Global.drum1_score = drum_score
-	elif "2" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "2":
 		Global.drum2_score = drum_score
-	elif "3" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "3":
 		Global.drum3_score = drum_score
-	elif "4" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "4":
 		Global.drum4_score = drum_score
-	elif "5" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "5":
 		Global.drum5_score = drum_score
-	elif "6" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "6":
 		Global.drum6_score = drum_score
-	elif "7" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "7":
 		Global.drum7_score = drum_score
-	elif "8" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "8":
 		Global.drum8_score = drum_score
-	elif "9" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "9":
 		Global.drum9_score = drum_score
-	elif "10" in get_parent().name:
+	elif get_parent().name.substr(11, 2) == "10":
 		Global.drum10_score = drum_score
 	Global.drum_combo = drum_combo
 	

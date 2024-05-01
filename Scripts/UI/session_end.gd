@@ -21,6 +21,7 @@ func _process(_delta):
 	var session_score = "drum" + str(session_number) + "_score"
 	var max_session_score = "max_drum" + str(session_number) + "_score"
 	score_node.text = "Кол-во баллов: " + str(Global.get(session_score))
+	print(Global.get(session_score))
 	max_score_node.text = "Макс. баллов: " + str(Global.get(max_session_score))
 
 
