@@ -27,9 +27,12 @@ func _ready():
 	elif teacher6_node:
 		teacher = teacher6_node
 		
-	if main_menu_node or get_parent().get_parent().name == "Main":
+	if main_menu_node:
 		exit_btn_node.modulate = Color(255, 255, 255, 0)
 		exit_btn_node.disabled = true
+		
+	if get_parent().get_parent().name == "Main":
+		exit_btn_node.text = "Выйти в меню"
 
 func _input(event):
 	if get_parent().name != "Menu":
@@ -53,7 +56,10 @@ func _on_back_btn_pressed():
 
 func _on_exit_btn_pressed():
 	self.hide()
-	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Levels/main.tscn")
+	if get_parent().get_parent().name == "Main":
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/menu.tscn")
+	else:
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/Levels/main.tscn")
 	get_tree().paused = false
 	if teacher:
 		player_node.loose = true	
