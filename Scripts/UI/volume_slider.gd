@@ -11,6 +11,5 @@ func _ready():
 	value_changed.connect(_on_value_changed)
 	
 func _on_value_changed(value : float) -> void:
-	#bus_value =  value
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
 

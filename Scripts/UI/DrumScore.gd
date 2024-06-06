@@ -9,6 +9,7 @@ func _ready():
 func _process(_delta):
 	update()
 
+#Обновляем занчения баллов
 func update():
 	if session_node.name.substr(11, 2) == "1":
 		text = str(Global.drum1_score)

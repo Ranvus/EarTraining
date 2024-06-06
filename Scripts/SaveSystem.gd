@@ -7,12 +7,13 @@ const SECURITY_KEY = "089654SDHDH"
 func _ready():
 	verify_save_directory(SAVE_DIR)
 
+#Проверяем существует ли директория
 func verify_save_directory(path : String):
 	DirAccess.make_dir_absolute(path)
 
 func save_data(path : String):
-	var file = FileAccess.open(path, FileAccess.WRITE)
-	#var file = FileAccess.open_encrypted_with_pass(path, FileAccess.WRITE, SECURITY_KEY)	
+	#var file = FileAccess.open(path, FileAccess.WRITE)
+	var file = FileAccess.open_encrypted_with_pass(path, FileAccess.WRITE, SECURITY_KEY)	
 	if file == null:
 		print(FileAccess.get_open_error())
 		return
@@ -46,14 +47,15 @@ func save_data(path : String):
 		}
 	}
 	
+	#Превращаем словарь с данными в строку, чтобы записать в JSON, \t позволяет сохранить внешний вид
 	var json_string = JSON.stringify(data, "\t") 
 	file.store_string(json_string)
 	file.close()
 	
 func load_data(path : String):
 	if FileAccess.file_exists(path):
-		var file = FileAccess.open(path, FileAccess.READ)
-		#var file = FileAccess.open_encrypted_with_pass(path, FileAccess.READ, SECURITY_KEY)
+		#var file = FileAccess.open(path, FileAccess.READ)
+		var file = FileAccess.open_encrypted_with_pass(path, FileAccess.READ, SECURITY_KEY)
 		if file == null:
 			print(FileAccess.get_open_error())
 			return
@@ -61,6 +63,7 @@ func load_data(path : String):
 		var content = file.get_as_text()
 		file.close()
 		
+		#Парсим данные из JSON
 		var data = JSON.parse_string(content)
 		if data == null:
 			printerr("Cannot parse %s as a json_string: (%s)" % [path, content])

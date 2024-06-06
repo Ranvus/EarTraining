@@ -11,9 +11,6 @@ var hit = false
 func _ready():
 	set_line()
 	
-#func _physics_process(delta):
-	#if hit:
-		#$Node2D.position.x += 300 * delta
 	
 func set_line():
 	var y

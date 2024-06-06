@@ -21,6 +21,7 @@ func setup(game):
 	
 func start():
 	started = true
+	#В скобках пишется с какой секунды начать
 	audio_player_node.play(start_pos_in_sec)
 	
 func _process(delta):
